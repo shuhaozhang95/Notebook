@@ -16,5 +16,7 @@ description: 文本摘要
 
 可以简单的根据词频，word2vec, LDA主题模型，或者判断文章中重要的句子。
 
-抽象型摘要：这种方法应用先进的NLP技术生成一篇全新的总结。可能总结中的文本甚至没有在原文中出现。\(Paper: A Neural Attention Model for Abstractive Sentence Summarization\) 基本神经网络模型，由生成器和编码器组成 这套架构称为Sequence-to-Sequence 广泛应用于输入输出序列的场景，比如机器翻译，image captioning\(图片像素序列到语言序列\)，对话机器人（问题到回答），编码器与解码器大都是CNN或RNN实现。
+抽象型摘要：这种方法应用先进的NLP技术生成一篇全新的总结。可能总结中的文本甚至没有在原文中出现。[\(A Neural Attention Model for Abstractive Sentence Summarization\) ](https://arxiv.org/abs/1509.00685)
+
+基本神经网络模型，由生成器和编码器组成 这套架构称为Sequence-to-Sequence 广泛应用于输入输出序列的场景，比如机器翻译，image captioning\(图片像素序列到语言序列\)，对话机器人（问题到回答），编码器与解码器大都是CNN或RNN实现。
 
