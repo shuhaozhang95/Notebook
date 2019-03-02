@@ -2,7 +2,7 @@
 
 * [Preface](README.md)
 
-## machine learning
+## Machine Learning
 
 * [Content](machine-learning/content.md)
 * [Supervised Learning](machine-learning/supervised-learning/README.md)
@@ -21,4 +21,8 @@
 * [Sentiment Analysis](natural-language-process/sentiment-analysis.md)
 * [Question Answering](natural-language-process/question-answering.md)
 * [Machine Translation](natural-language-process/machine-translation.md)
+
+## Machine Vision
+
+* [Optical Character Recognition](machine-vision/optical-character-recognition.md)
 
