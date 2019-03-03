@@ -1,2 +1,2 @@
-# Word2Vec
+# Word Representation
 

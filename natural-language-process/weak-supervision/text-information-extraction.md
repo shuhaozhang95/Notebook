@@ -2,7 +2,7 @@
 description: 信息抽取
 ---
 
-# Text Information Extraction
+# Information Extraction
 
 信息抽取\(Text Information Extraction\)：从给定文本中抽取重要的信息，比如，时间、地点、人物、事件、原因、结果、数字、日期、货币、专有名词等等。通俗说来，就是要了解谁在什么时候、什么原因、对谁、做了什么事、有什么结果。涉及到实体识别、时间抽取、因果关系抽取等关键技术。
 

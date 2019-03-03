@@ -8,19 +8,36 @@
 * [Supervised Learning](machine-learning/supervised-learning/README.md)
   * [Linear/ Logistic Regression](machine-learning/supervised-learning/linear-logistic-regression.md)
   * [Tree/ Random Forest](machine-learning/supervised-learning/tree-random-forest.md)
+  * [GDBT/ XGBOOST](machine-learning/supervised-learning/gdbt-xgboost.md)
   * [Support Vector Machine](machine-learning/supervised-learning/support-vector-machine.md)
-* [Unsupervised Learning](machine-learning/unsupervised-learning.md)
+* [Unsupervised Learning](machine-learning/unsupervised-learning/README.md)
+  * [K-mean/ KNN](machine-learning/unsupervised-learning/k-mean-knn.md)
+
+## Deep Learning
+
+* [GRU/ LSTM](deep-learning/gru-lstm.md)
 
 ## Natural Language Process
 
 * [Content](natural-language-process/content.md)
-* [Word2Vec](natural-language-process/word2vec.md)
-* [Text Summarization](natural-language-process/text-summarization.md)
-* [Text Information Extraction](natural-language-process/text-information-extraction.md)
-* [Named Entity Recognition](natural-language-process/named-entity-recognition.md)
-* [Sentiment Analysis](natural-language-process/sentiment-analysis.md)
-* [Question Answering](natural-language-process/question-answering.md)
-* [Machine Translation](natural-language-process/machine-translation.md)
+* [Tokenisation and Sentence Splitting](natural-language-process/tokenisation-and-sentence-splitting.md)
+* [Classification](natural-language-process/classification/README.md)
+  * [Text Classification](natural-language-process/classification/text-classification.md)
+  * [Sequence Labelling](natural-language-process/classification/sequence-labelling/README.md)
+    * [Named Entity Recognition](natural-language-process/classification/sequence-labelling/named-entity-recognition.md)
+  * [Sentiment Analysis](natural-language-process/classification/sentiment-analysis.md)
+* [Generative Learning](natural-language-process/generative-learning/README.md)
+  * [Language Models](natural-language-process/generative-learning/language-models.md)
+  * [Machine Translation](natural-language-process/generative-learning/machine-translation-1.md)
+  * [Constituent Parsing](natural-language-process/generative-learning/constituent-parsing.md)
+  * [Dependency Parsing](natural-language-process/generative-learning/dependency-parsing.md)
+* [Weak Supervision](natural-language-process/weak-supervision/README.md)
+  * [Information Extraction](natural-language-process/weak-supervision/text-information-extraction.md)
+* [Word Representation](natural-language-process/word2vec.md)
+* [Applications](natural-language-process/applications/README.md)
+  * [Text Summarization](natural-language-process/applications/text-summarization.md)
+  * [Question Answering](natural-language-process/applications/question-answering.md)
+  * [Machine Comprehension](natural-language-process/applications/machine-comprehension.md)
 
 ## Machine Vision
 

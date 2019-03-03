@@ -1,9 +1,12 @@
 # Content
 
-* Natural Language Processing
-  * [文本摘要 （Text Summarization）](text-summarization.md)
-  * [信息抽取（Text Information Extraction）](text-information-extraction.md)
-  * [命名实体识别（NER Named Entity Recognition）](named-entity-recognition.md)
+What is NLP?
 
+* Building computer systems that **understand** and **generate** natural languages.
+* Deep understanding of **broad** language
+  * not just string processing or keyword matching
 
+![](../.gitbook/assets/image%20%281%29.png)
+
+端到端训练和表示学习是深度学习区别于传统机器学习方法关键，并且这两者让深度学习成为了 NLP 中一个强大的机器。
 
