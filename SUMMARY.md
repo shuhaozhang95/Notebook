@@ -7,6 +7,7 @@
 * [Content](machine-learning/content.md)
 * [Supervised Learning](machine-learning/supervised-learning/README.md)
   * [Linear/ Logistic Regression](machine-learning/supervised-learning/linear-logistic-regression.md)
+  * [Gradient Descent](machine-learning/supervised-learning/gradient-descent.md)
   * [Tree/ Random Forest](machine-learning/supervised-learning/tree-random-forest.md)
   * [GDBT/ XGBOOST](machine-learning/supervised-learning/gdbt-xgboost.md)
   * [Support Vector Machine](machine-learning/supervised-learning/support-vector-machine.md)
