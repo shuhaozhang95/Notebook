@@ -17,6 +17,7 @@
 
 ## Deep Learning
 
+* [Activation function](deep-learning/activation-function.md)
 * [GRU/ LSTM](deep-learning/gru-lstm.md)
 
 ## Natural Language Process
