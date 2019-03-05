@@ -14,6 +14,7 @@
   * [K-Nearest Neighbor](machine-learning/supervised-learning/knn.md)
 * [Unsupervised Learning](machine-learning/unsupervised-learning/README.md)
   * [K-mean](machine-learning/unsupervised-learning/k-mean-knn.md)
+  * [Gaussian Mixture Model](machine-learning/unsupervised-learning/gaussian-mixture-model.md)
   * [Expectation Maximisation](machine-learning/unsupervised-learning/expectation-maximisation.md)
 
 ## Deep Learning
