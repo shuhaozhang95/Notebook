@@ -16,6 +16,9 @@
   * [K-mean](machine-learning/unsupervised-learning/k-mean-knn.md)
   * [Gaussian Mixture Model](machine-learning/unsupervised-learning/gaussian-mixture-model.md)
   * [Expectation Maximisation](machine-learning/unsupervised-learning/expectation-maximisation.md)
+  * [Dimension Reduction](machine-learning/unsupervised-learning/dimension-reduction/README.md)
+    * [t-SNE](machine-learning/unsupervised-learning/dimension-reduction/t-sne.md)
+    * [Principal component analysis](machine-learning/unsupervised-learning/dimension-reduction/principal-component-analysis.md)
 
 ## Deep Learning
 
