@@ -27,3 +27,31 @@ b[0] = 20
 
 3. 方括号是list，圆括号是tuple，tuple元素不可改变
 
+4. Python 笔试 输入数据的方法
+
+```text
+(1) 输入多个整数
+
+a,b,c,d = map(int, input().split())
+
+或者写成:
+
+str_in= input()
+num = [int(n), for n instr_in.split()]
+
+(2)输入多行数据
+
+N = int(input())
+inputlist = []
+area = 0
+for i in range(N):
+    lines = input()
+    inputlist.append(lines.split())
+
+(3)不定行的数据
+
+import sys
+for line in sys.stdin:
+    .....
+```
+

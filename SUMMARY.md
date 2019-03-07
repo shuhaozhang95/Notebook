@@ -18,6 +18,7 @@
   * [K-Nearest Neighbor](machine-learning/supervised-learning/knn.md)
   * [Evaluation](machine-learning/supervised-learning/evaluation.md)
 * [Unsupervised Learning](machine-learning/unsupervised-learning/README.md)
+  * [HMM/CRF](machine-learning/unsupervised-learning/hmm-crf.md)
   * [K-mean](machine-learning/unsupervised-learning/k-mean-knn.md)
   * [Gaussian Mixture Model](machine-learning/unsupervised-learning/gaussian-mixture-model.md)
   * [Expectation Maximisation](machine-learning/unsupervised-learning/expectation-maximisation.md)
@@ -28,6 +29,7 @@
 
 ## Deep Learning
 
+* [Backpropagation](deep-learning/backpropagation.md)
 * [CNN](deep-learning/cnn.md)
 * [RNN/LSTM/GRU](deep-learning/gru-lstm.md)
 * [Activation function](deep-learning/activation-function.md)
