@@ -47,6 +47,7 @@
   * [Word2Vec](natural-language-process/word2vec/word2vec.md)
   * [GloVe](natural-language-process/word2vec/glove.md)
 * [Applications](natural-language-process/applications/README.md)
+  * [TextRank](natural-language-process/applications/textrank.md)
   * [Text Summarization](natural-language-process/applications/text-summarization.md)
   * [Question Answering](natural-language-process/applications/question-answering.md)
   * [Machine Comprehension](natural-language-process/applications/machine-comprehension.md)

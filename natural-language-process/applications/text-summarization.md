@@ -20,3 +20,5 @@ description: 文本摘要
 
 基本神经网络模型，由生成器和编码器组成 这套架构称为Sequence-to-Sequence 广泛应用于输入输出序列的场景，比如机器翻译，image captioning\(图片像素序列到语言序列\)，对话机器人（问题到回答），编码器与解码器大都是CNN或RNN实现。
 
+
+
