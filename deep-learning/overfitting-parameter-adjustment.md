@@ -7,6 +7,10 @@
 * Cross Validation
 * Batch size
 * learning rate
+* Feature selection/ Feature reduction（降维）
+* Increase data set size \(resample, add noise\)
+
+
 
 dropout， regularization， batch normalizatin，但是要注意dropout只在训练的时候用，让一部分神经元随机失活。
 

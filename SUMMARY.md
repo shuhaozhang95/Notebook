@@ -28,6 +28,7 @@
 * [Activation function](deep-learning/activation-function.md)
 * [Gradient Explosion/Vanishing](deep-learning/gradient-explosion-vanishing.md)
 * [Overfitting/Parameter Adjustment](deep-learning/overfitting-parameter-adjustment.md)
+* [GAN](deep-learning/gan.md)
 
 ## Natural Language Process
 
