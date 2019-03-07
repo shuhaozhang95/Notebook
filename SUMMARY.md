@@ -29,13 +29,17 @@
 
 ## Deep Learning
 
-* [Backpropagation](deep-learning/backpropagation.md)
-* [CNN](deep-learning/cnn.md)
-* [RNN/LSTM/GRU](deep-learning/gru-lstm.md)
-* [Activation function](deep-learning/activation-function.md)
-* [Gradient Explosion/Vanishing](deep-learning/gradient-explosion-vanishing.md)
-* [Overfitting/Parameter Adjustment](deep-learning/overfitting-parameter-adjustment.md)
-* [GAN](deep-learning/gan.md)
+* [Classical Model](deep-learning/classical-model/README.md)
+  * [Backpropagation](deep-learning/classical-model/backpropagation.md)
+  * [CNN](deep-learning/classical-model/cnn.md)
+  * [RNN/LSTM/GRU](deep-learning/classical-model/gru-lstm.md)
+  * [GAN](deep-learning/classical-model/gan.md)
+* [Complex Model](deep-learning/complex-model/README.md)
+  * [BERT](deep-learning/complex-model/bert.md)
+* [Others](deep-learning/others/README.md)
+  * [Activation function](deep-learning/others/activation-function.md)
+  * [Gradient Explosion/Vanishing](deep-learning/others/gradient-explosion-vanishing.md)
+  * [Overfitting/Parameter Adjustment](deep-learning/others/overfitting-parameter-adjustment.md)
 
 ## Natural Language Process
 

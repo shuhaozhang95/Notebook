@@ -18,7 +18,7 @@
         <p></p>
         <p></p>
         <p>
-          <img src="../.gitbook/assets/image (5).png" alt/>
+          <img src="../../.gitbook/assets/image (5).png" alt/>
         </p>
       </td>
       <td style="text-align:left">
@@ -33,7 +33,7 @@
     <tr>
       <td style="text-align:center">Tanh</td>
       <td style="text-align:left">
-        <img src="../.gitbook/assets/tanh.jpg" alt/>
+        <img src="../../.gitbook/assets/tanh.jpg" alt/>
       </td>
       <td style="text-align:left">&#x68AF;&#x5EA6;&#x5F25;&#x6563;&#x6CA1;&#x6709;&#x89E3;&#x51B3;</td>
       <td
@@ -42,7 +42,7 @@
     <tr>
       <td style="text-align:center">ReLU</td>
       <td style="text-align:left">
-        <img src="../.gitbook/assets/relu.jpg" alt/>
+        <img src="../../.gitbook/assets/relu.jpg" alt/>
       </td>
       <td style="text-align:left">&#x68AF;&#x5EA6;&#x5F25;&#x6563;&#x6CA1;&#x5B8C;&#x5168;&#x89E3;&#x51B3;&#xFF0C;&#x5728;&#xFF08;-&#xFF09;&#x90E8;&#x5206;&#x76F8;&#x5F53;&#x4E8E;&#x795E;&#x7ECF;&#x6B7B;&#x4EA1;&#x800C;&#x4E14;&#x4E0D;&#x4F1A;&#x590D;&#x6D3B;</td>
       <td
