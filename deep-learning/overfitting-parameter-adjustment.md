@@ -1,5 +1,7 @@
 # Overfitting/Parameter Adjustment
 
+防止过拟合的方法 过拟合的原因是算法的学习能力过强；一些假设条件（如样本独立同分布）可能是不成立的；训练样本过少不能对整个空间进行分布估计。
+
 * Drop out
 * Regularisation
 * Batch Normalisation

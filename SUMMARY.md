@@ -2,6 +2,10 @@
 
 * [Preface](README.md)
 
+## Data Analysis
+
+* [Data Clean/ Process](data-analysis/data-clean-process.md)
+
 ## Machine Learning
 
 * [Content](machine-learning/content.md)
@@ -18,6 +22,7 @@
   * [Gaussian Mixture Model](machine-learning/unsupervised-learning/gaussian-mixture-model.md)
   * [Expectation Maximisation](machine-learning/unsupervised-learning/expectation-maximisation.md)
   * [Dimension Reduction](machine-learning/unsupervised-learning/dimension-reduction/README.md)
+    * [SVD](machine-learning/unsupervised-learning/dimension-reduction/svd.md)
     * [t-SNE](machine-learning/unsupervised-learning/dimension-reduction/t-sne.md)
     * [Principal component analysis](machine-learning/unsupervised-learning/dimension-reduction/principal-component-analysis.md)
 
