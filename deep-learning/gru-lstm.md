@@ -1,2 +1,2 @@
-# GRU/ LSTM
+# RNN/LSTM/GRU
 

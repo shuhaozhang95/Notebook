@@ -23,8 +23,11 @@
 
 ## Deep Learning
 
+* [CNN](deep-learning/cnn.md)
+* [RNN/LSTM/GRU](deep-learning/gru-lstm.md)
 * [Activation function](deep-learning/activation-function.md)
-* [GRU/ LSTM](deep-learning/gru-lstm.md)
+* [Gradient Explosion/Vanishing](deep-learning/gradient-explosion-vanishing.md)
+* [Overfitting/Parameter Adjustment](deep-learning/overfitting-parameter-adjustment.md)
 
 ## Natural Language Process
 
