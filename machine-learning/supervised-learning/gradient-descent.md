@@ -22,6 +22,25 @@
 
 其中 $$x_{i}$$ 表示第i个样本特征， $$y_{i}$$ 表示第i个样本对应的输出， $$h_\theta(x_i)$$ 为假设函数。   
 
+**算法过程：**
+
+1）确定当前位置的损失函数的梯度，对于 $$θ $$ 向量,其梯度表达式如下：
+
+　　　　　　　　 $$\frac{\partial}{\partial\mathbf\theta}J(\mathbf\theta)$$ 
+
+2）用步长乘以损失函数的梯度，得到当前位置下降的距离.
+
+3）确定 $$θ$$ 向量里面的每个值,梯度下降的距离都小于 $$ε$$ ，如果小于 $$ε$$ 则算法终止，当前 $$θ$$ 向量即为最终结果。否则进入步骤4.
+
+4）更新 $$θ$$ 向量，其更新表达式如下。更新完毕后继续转入步骤1.
+
+　　　　　　　　 $$\mathbf\theta= \mathbf\theta - \alpha\frac{\partial}{\partial\theta}J(\mathbf\theta)$$   
+**算法调优：**
+
+1. 算法的步长选择
+2. 算法参数的初始值选择
+3. 归一化
+
 Batch Gradient Descent
 
 Mini-batch Gradient Descent
