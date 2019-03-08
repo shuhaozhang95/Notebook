@@ -41,11 +41,86 @@
 2. 算法参数的初始值选择
 3. 归一化
 
-Batch Gradient Descent
+**Stochastic Gradient Descent**
 
-Mini-batch Gradient Descent
+SGD is useful in the situations:
 
-Stochastic Gradient Descent
+* The dataset is too big to store all of it.
+* The dataset is so big that it will take a long time to take an update.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x4F18;&#x70B9;</th>
+      <th style="text-align:left">&#x7F3A;&#x70B9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x9891;&#x7E41;&#x7684;&#x66F4;&#x65B0;&#x53EF;&#x4EE5;&#x7ED9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x8868;&#x73B0;&#x548C;&#x6548;&#x7387;&#x63D0;&#x5347;&#x7684;&#x5373;&#x65F6;&#x53CD;&#x9988;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x76F8;&#x6BD4;&#x5176;&#x4ED6;&#x6765;&#x8BF4;&#xFF0C;&#x8BA1;&#x7B97;&#x6D88;&#x8017;&#x66F4;&#x5927;&#xFF0C;&#x5728;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x82B1;&#x8D39;&#x7684;&#x8BAD;&#x7EC3;&#x65F6;&#x95F4;&#x66F4;&#x591A;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x8F83;&#x9AD8;&#x7684;&#x6A21;&#x578B;&#x66F4;&#x65B0;&#x9891;&#x7387;&#x5728;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x4E0A;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x7684;&#x5B66;&#x4E60;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x9891;&#x7E41;&#x7684;&#x66F4;&#x65B0;&#x4EA7;&#x751F;&#x7684;&#x566A;&#x58F0;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x548C;&#x6A21;&#x578B;&#x8BEF;&#x5DEE;&#x6765;&#x56DE;&#x8DF3;&#x52A8;&#xFF08;&#x66F4;&#x5927;&#x7684;&#x65B9;&#x5DEE;&#xFF09;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x8FD9;&#x79CD;&#x4F34;&#x6709;&#x566A;&#x58F0;&#x7684;&#x66F4;&#x65B0;&#x65B9;&#x5F0F;&#x80FD;&#x8BA9;&#x6A21;&#x578B;&#x907F;&#x514D;&#x5C40;&#x90E8;&#x6700;&#x4F18;&#xFF08;&#x6BD4;&#x5982;&#x8FC7;&#x65E9;&#x6536;&#x655B;&#xFF09;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x8FD9;&#x79CD;&#x4F34;&#x6709;&#x566A;&#x58F0;&#x7684;&#x66F4;&#x65B0;&#x65B9;&#x5F0F;&#x4E5F;&#x80FD;&#x8BA9;&#x7B97;&#x6CD5;&#x96BE;&#x4EE5;&#x7A33;&#x5B9A;&#x7684;&#x6536;&#x655B;&#x4E8E;&#x4E00;&#x70B9;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>\*\*\*\*
+
+**Batch Gradient Descent**
+
+* Compute the gradient by first summing over all the training data inputs.
+* The do a gradient update.
+
+
+
+**Mini-Batch Gradient Descent**
+
+
+
+
+
+**Online Gradient Descent**
+
+SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD几乎一样。这里只是突出他具有Online learning的作用。
+
+* Data points arrive in a stream.
+* Compute approximate gradient by summing over a single datapoint.
+* Then do a gradient update immediately for this datapoint.
 
 Newton
 
