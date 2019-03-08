@@ -106,11 +106,146 @@ SGD is useful in the situations:
 * Compute the gradient by first summing over all the training data inputs.
 * The do a gradient update.
 
+批量梯度下降对训练集上每一个数据都计算误差，但只在所有训练数据计算完成后才更新模型。
 
+对训练集上的一次训练过程称为一代（epoch）。因此，批量梯度下降是在每一个训练epoch之后更新模型。
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x4F18;&#x70B9;</th>
+      <th style="text-align:left">&#x7F3A;&#x70B9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x66F4;&#x5C11;&#x7684;&#x6A21;&#x578B;&#x66F4;&#x65B0;&#x610F;&#x5473;&#x7740;&#x6BD4;SGD&#x6709;&#x66F4;&#x9AD8;&#x7684;&#x8BA1;&#x7B97;&#x6548;&#x7387;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x66F4;&#x7A33;&#x5B9A;&#x7684;&#x8BEF;&#x5DEE;&#x68AF;&#x5EA6;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6A21;&#x578B;&#x8FC7;&#x65E9;&#x6536;&#x655B;&#x4E8E;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;&#x6700;&#x4F18;&#x89E3;&#x7684;&#x53C2;&#x6570;&#x96C6;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x5728;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x4E0A;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x66F4;&#x7A33;&#x5B9A;&#x7684;&#x8BEF;&#x5DEE;&#x68AF;&#x5EA6;&#x548C;&#x66F4;&#x7A33;&#x5B9A;&#x7684;&#x6536;&#x655B;&#x70B9;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x6BCF;&#x4E00;&#x6B21;epoch&#x4E4B;&#x540E;&#x624D;&#x66F4;&#x65B0;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x7D2F;&#x52A0;&#x6240;&#x6709;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x8BEF;&#x5DEE;&#x7684;&#x590D;&#x6742;&#x8BA1;&#x7B97;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x8BEF;&#x5DEE;&#x8BA1;&#x7B97;&#x548C;&#x6A21;&#x578B;&#x66F4;&#x65B0;&#x8FC7;&#x7A0B;&#x7684;&#x5206;&#x79BB;&#x6709;&#x5229;&#x4E8E;&#x5E76;&#x884C;&#x7B97;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x6279;&#x91CF;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#x9700;&#x8981;&#x628A;&#x6240;&#x6709;&#x7684;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x90FD;&#x5B58;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x5728;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#xFF0C;&#x8BAD;&#x7EC3;&#x901F;&#x5EA6;&#x4F1A;&#x975E;&#x5E38;&#x6162;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>\*\*\*\*
 
 **Mini-Batch Gradient Descent**
 
+小批量梯度下降把训练集划分为很多批，对每一批（batch）计算误差并更新参数。
 
+可以选择对batch的梯度进行累加，或者取平均值。取平均值可以减少梯度的方差。
+
+小批量梯度下降在随机梯度下降的鲁棒性和批量梯度下降的效率之间取得平衡。是如今深度学习领域最常见的实现方式。
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>&#x4F18;&#x70B9;</b>
+      </th>
+      <th style="text-align:left">&#x7F3A;&#x70B9;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x6BD4;&#x6279;&#x91CF;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x66F4;&#x5FEB;&#x7684;&#x66F4;&#x65B0;&#x9891;&#x7387;&#x6709;&#x5229;&#x4E8E;&#x66F4;&#x9C81;&#x68D2;&#x7684;&#x6536;&#x655B;&#xFF0C;&#x907F;&#x514D;&#x5C40;&#x90E8;&#x6700;&#x4F18;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x5C0F;&#x6279;&#x91CF;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7ED9;&#x7B97;&#x6CD5;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x8D85;&#x53C2;&#x6570;batch
+            size&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x76F8;&#x6BD4;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x66F4;&#x5177;&#x8BA1;&#x7B97;&#x6548;&#x7387;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x548C;&#x6279;&#x91CF;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x4E00;&#x6837;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;batch&#x4E0A;&#x7684;&#x8BEF;&#x5DEE;&#x9700;&#x8981;&#x7D2F;&#x52A0;&#x3002;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <ul>
+          <li>&#x4E0D;&#x9700;&#x8981;&#x628A;&#x6240;&#x6709;&#x6570;&#x636E;&#x653E;&#x5165;&#x5185;&#x5B58;&#x4E2D;&#x3002;</li>
+        </ul>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>**怎么配置mini-batch梯度下降**
+
+Mini-batch梯度下降对于深度学习大部分应用是最常用的方法。
+
+Mini-batch sizes，简称为 “batch sizes”，是算法设计中需要调节的参数。比如对应于不同[GPU](https://www.baidu.com/s?wd=GPU&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)或[CPU](https://www.baidu.com/s?wd=CPU&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)硬件（32,64,128,256等）的内存要求。
+
+batch size是学习过程中的“滑块”。
+
+* 较小的值让学习过程收敛更快，但是产生更多噪声。
+* 较大的值让学习过程收敛较慢，但是准确的估计误差梯度。
+
+建议1：batch size的默认值最好是32。`batch size通常从1到几百之间选择，比如32是一个很好的默认值，超过10的值可以充分利用矩阵`_`矩阵相对于矩阵`_`向量的加速优势。`
+
+建议2：调节batch size时，最好观察模型在不同batch size下的训练时间和验证误差的学习曲线
+
+建议3：调整其他所有超参数之后再调整batch size和学习率
+
+`batch size和学习率几乎不受其他超参数的影响，因此可以放到最后再优化。batch size确定之后，可以被视为固定值，从而去优化其他超参数（如果使用了动量超参数则例外）。`
 
 
 
@@ -121,6 +256,8 @@ SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD�
 * Data points arrive in a stream.
 * Compute approximate gradient by summing over a single datapoint.
 * Then do a gradient update immediately for this datapoint.
+
+
 
 Newton
 

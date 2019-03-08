@@ -39,6 +39,8 @@
 
 对于large scale data，我们也可以采用Gradient Descent的方法来进行优化。
 
+_**A simple linear system that can be solved in**_ $$O((dim \theta)^3)$$ ****_**time.**_
+
 
 
 **Logistic Regression:**
