@@ -291,6 +291,24 @@ $$x_{k+1} = x_{k} + \widetilde{g}_{k+1}$$
 
 **Hence, Instead of using the update** $$-\epsilon g_{k}(x_{k})$$**, we use the moving average of the update** $$\widetilde{g}_{k+1}$$ **to form the new update.**
 
+**另一种表达方式：**
+
+![](https://www.zhihu.com/equation?tex=V_%7BdW%7D+%3D+%5Cbeta+V_%7BdW%7D%2B%281-%5Cbeta%29dW)
+
+![](https://www.zhihu.com/equation?tex=V_%7Bdb%7D+%3D+%5Cbeta+V_%7Bdb%7D%2B%281-%5Cbeta%29db)
+
+**优点：**
+
+* Momentum can increase the speed of convergence since, for smooth objectives, as we get close to the minimum the gradient decreases and standard gradient descent starts to slow down. \(加速收敛\)
+* If the learning rate is too large, standard gradient descent may oscillate\(摆动\), but momentum may reduce oscillations by going in the average direction. \(减少摆动，下降更为稳定\)
+* However, the momentum parameter $$\mu$$ may need to be reduced with the iteration count to ensure convergence. \( $$\mu$$在这里调节moving average和前一个 $$\widetilde{g}_{k}$$ 带来的影响的平衡\) 
+* Particularly useful when the gradient is noisy. \(因为算上了前一个梯度的方向的平均，一些noise的点影响会减少\)
+* Momentum is also useful to avoid saddles\(鞍点，比如两峰之间的低洼部分\) since typically the momentum will carry you over the saddle .
+
+
+
+**Nesterov's Accelerated Gradient**
+
 \*\*\*\*
 
 \*\*\*\*
