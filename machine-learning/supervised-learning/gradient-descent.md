@@ -259,13 +259,15 @@ SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD�
 
 
 
-**Higher Order Methods:**
-
-Line Search and Conjugate Gradient methods \(共轭梯度法\)
+**Line Search and Conjugate Gradient methods \(共轭梯度法\)**
 
 * Higher order methods combine better search directions with line search to improve convergence. 
 * For a quadratic surface, conjugate gradients is much faster than standard gradient descent.
 * Efficient ways to exploit sparsity in the feature\(input\) vector $$x$$ to perform regression on very large datasets with very high dimensional $$x$$ .
+
+共轭梯度法加入了Line Search来限制方向，避免梯度下降可能出去锯齿的情况。
+
+![Red line: conjugate gradient ](../../.gitbook/assets/image%20%285%29.png)
 
 
 
@@ -309,11 +311,23 @@ $$x_{k+1} = x_{k} + \widetilde{g}_{k+1}$$
 
 **Nesterov's Accelerated Gradient**
 
-\*\*\*\*
+This looks similar to momentum but has a slightly different update
+
+$$\widetilde{g}_{k+1} = \mu_{k} \widetilde{g}_{k} - \epsilon g(x_{k} + \mu_{k} \widetilde{g}_{k})$$ 
+
+That is, we use the gradient of the point we will move to, rather than the current point. 
+
+**结论：在原始形式中，Nesterov Accelerated Gradient（NAG）算法相对于Momentum的改进在于，以“向前看”看到的梯度而不是当前位置梯度去更新。经过变换之后的等效形式中，NAG算法相对于Momentum多了一个本次梯度相对上次梯度的变化量，这个变化量本质上是对目标函数二阶导的近似。由于利用了二阶导的信息，NAG算法才会比Momentum具有更快的收敛速度。**
 
 \*\*\*\*
 
-\*\*\*\*
+**Higher Order Methods: 一般是指泰勒展开到了二阶**
+
+**Newton's method**
+
+Consider a function $$f(x)$$ that we wish to find the minimum of. A Taylor expansion up to second order gives
+
+
 
 \*\*\*\*
 
