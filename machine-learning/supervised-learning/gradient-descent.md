@@ -261,13 +261,51 @@ SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD�
 
 **Higher Order Methods:**
 
-Conjugate Gradient methods \(共轭梯度法\)
+Line Search and Conjugate Gradient methods \(共轭梯度法\)
+
+* Higher order methods combine better search directions with line search to improve convergence. 
+* For a quadratic surface, conjugate gradients is much faster than standard gradient descent.
+* Efficient ways to exploit sparsity in the feature\(input\) vector $$x$$ to perform regression on very large datasets with very high dimensional $$x$$ .
 
 
 
+**Momentum Gradient Descent**
 
+One simple idea to limit the zig-zag behaviour is to make an update in the average direction of the previous updates.
 
-Newton
+> _Moving Average_
+>
+> Consider a set of numbers $$x_{1},...,x_{t}$$. Then the average $$a_{t}$$ is given by 
+>
+> $$a_{t} = \frac{1}{t} \sum^{t}_{\tau=1}x_{\tau} = \frac{1}{t}(x_{t} +(t-1) a_{t-1}) = \epsilon_{t}x_{t} +\mu_{t}a_{t-1}$$ 
+>
+> for suitably chosen $$\epsilon_{t}$$ and $$0<\mu_{t}<1$$ . If $$\mu_{t}$$ is small then the more recent $$x$$ contribute more strongly to the moving average.
 
-Adam
+Momentum idea is to use a form of moving average to the updates:
+
+这里的 $$\widetilde{g}_{k}$$ 是梯度 $$▽f(x_{k})$$, $$x_{k} $$ 就是我们的参数 $$\theta$$ \(或者矩阵W\)
+
+$$\widetilde{g}_{k+1} = \mu_{k}\widetilde{g}_{k} - \epsilon g_{k}(x_{k})$$ 
+
+$$x_{k+1} = x_{k} + \widetilde{g}_{k+1}$$ 
+
+**Hence, Instead of using the update** $$-\epsilon g_{k}(x_{k})$$**, we use the moving average of the update** $$\widetilde{g}_{k+1}$$ **to form the new update.**
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
 
