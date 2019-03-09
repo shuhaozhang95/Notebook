@@ -259,6 +259,14 @@ SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD�
 
 
 
+**Higher Order Methods:**
+
+Conjugate Gradient methods \(共轭梯度法\)
+
+
+
+
+
 Newton
 
 Adam
