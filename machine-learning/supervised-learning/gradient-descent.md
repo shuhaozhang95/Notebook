@@ -325,15 +325,30 @@ That is, we use the gradient of the point we will move to, rather than the curre
 
 **Newton's method**
 
-Consider a function $$f(x)$$ that we wish to find the minimum of. A Taylor expansion up to second order gives
+Consider a function $$f(x)$$ that we wish to find the minimum of. A Taylor expansion up to second order gives：
 
+$$f(x+\triangle) = f(x) +\triangle^{T} \nabla f + \frac{1}{2} \triangle^{T} H_{f} \triangle + O(|\triangle|^{3})$$ 
 
+The matrix $$H_{f}$$ is the Hessian.  
 
-\*\*\*\*
+Differentiating the right hand side with respect to $$\triangle$$ , we find that the right hand side has its lowest value when:
 
-\*\*\*\*
+$$\nabla f = -H_{f} \triangle \Rightarrow  \triangle =  - H_{f}^{-1} \nabla f$$ 
 
-\*\*\*\*
+Hence, an optimisation routine to minimise ****$$f$$ is given by the Newton update
+
+$$x_{k+1} = x_{k} - \epsilon H_{f}^{-1} \nabla f$$ 
+
+With this update, the change in the function is:
+
+$$\triangle^{T} \nabla f + \frac{1}{2} \triangle^{T} H_{f} \triangle = \epsilon (-1 +\frac{\epsilon}{2}) \nabla f^{T} H_{f}^{-1} \nabla$$ 
+
+For quadratic functions, Newton's method converges in one step \(for ****$$\epsilon =1$$ **\)**. More generally one uses a value ****$$\epsilon < 1$$ to avoid overshooting effects.
+
+| **优点** | 缺点 |
+| :--- | :--- |
+| 牛顿法收敛更快。（通俗来说梯度下降法每次只从你当前所处位置选一个坡度最大的方向走一步，牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑你走了一步之后，坡度是否会变得更大。所以，可以说牛顿法比梯度下降法看得更远一点，能更快地走到最底部。） | 牛顿法的每次迭代时间比梯度下降法要长 |
+| A benefit of the Newton method over gradient descent is that the decrease in the objective function is invariant（不变） under a linear change of co-ordinates. The  change is independent of the coordinate system \(Up to linear transformations of the coordinates\)  | Storing the Hessian and solving the linear system $$H_{f}^{-1} \nabla f $$ is very expensive. |
 
 \*\*\*\*
 
