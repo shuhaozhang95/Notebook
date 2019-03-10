@@ -352,7 +352,31 @@ For quadratic functions, Newton's method converges in one step \(for ****$$\epsi
 
 **Adagrad**
 
-\*\*\*\*
+Adagrad is an algorithm for gradient-based optimization that does just this: It adapts the learning rate to the parameters, performing smaller updates \(i.e. low learning rates\) for parameters associated with frequently occurring features, and larger updates \(i.e. high learning rates\) for parameters associated with infrequent features.
+
+For this reason, it is well-suited for dealing with sparse data.
+
+Previously, we performed an update for all parameters $$\theta$$ at once as every parameter $$\theta_{i}$$ used the same learning rate $$η$$ . As Adagrad uses a different learning rate for every parameter $$\theta_{i}$$ at every time step $$t$$ , we first show Adagrad's per-parameter update, which we then vectorize.
+
+In its update rule, Adagrad modifies the general learning rate $$η$$ at each time step $$t$$ for every parameter $$\theta_{i}$$ based on the past gradients that have been computed for $$\theta_{i}$$ :
+
+$$\theta_{t+1, i} = \theta_{t, i} - \dfrac{\eta}{\sqrt{G_{t, ii} + \epsilon}} \cdot g_{t, i}$$ 
+
+$$G_{t} \in \mathbb{R}^{d \times d}$$ here is a diagonal matrix where each diagonal element $$i$$ , $$i$$ is the sum of the squares of the gradients w.r.t. $$\theta_{i}$$ up to time step $$t$$ , while $$\epsilon$$ is a smoothing term that avoids division by zero \(usually on the order of $$1e-8$$ \). Interestingly, without the square root operation, the algorithm performs much worse.
+
+As $$G_{t}$$ contains the sum of the squares of the past gradients w.r.t. to all parameters $$θ$$ along its diagonal, we can now vectorize our implementation by performing a matrix-vector product ⊙ between $$G_{t}$$ and $$g_{t}$$ :
+
+$$\theta_{t+1} = \theta_{t} - \dfrac{\eta}{\sqrt{G_{t} + \epsilon}} \odot g_{t}$$ 
+
+| Benefit | Weakness |
+| :--- | :--- |
+| it eliminates the need to manually tune the learning rate. Most implementations use a default value of 0.01 and leave it at that. | its accumulation of the squared gradients in the denominator: Since every added term is positive, the accumulated sum keeps growing during training. This in turn causes the learning rate to shrink and eventually become infinitesimally small, at which point the algorithm is no longer able to acquire additional knowledge. \(学习的变化幅度越来越小，因为要除以梯度的开方\) |
+
+**Adadelta**
+
+ Adadelta is an extension of Adagrad that seeks to reduce its aggressive, monotonically decreasing learning rate. Instead of accumulating all past squared gradients, Adadelta restricts the window of accumulated past gradients to some fixed size $$w$$ ****.
+
+**Adadelta是Adagrad的延伸，将 以往梯度的加和 控制在一个值内。**
 
 **Adam**
 
