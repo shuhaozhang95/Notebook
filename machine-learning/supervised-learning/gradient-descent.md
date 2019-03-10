@@ -350,6 +350,10 @@ For quadratic functions, Newton's method converges in one step \(for ****$$\epsi
 | 牛顿法收敛更快。（通俗来说梯度下降法每次只从你当前所处位置选一个坡度最大的方向走一步，牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑你走了一步之后，坡度是否会变得更大。所以，可以说牛顿法比梯度下降法看得更远一点，能更快地走到最底部。） | 牛顿法的每次迭代时间比梯度下降法要长 |
 | A benefit of the Newton method over gradient descent is that the decrease in the objective function is invariant（不变） under a linear change of co-ordinates. The  change is independent of the coordinate system \(Up to linear transformations of the coordinates\)  | Storing the Hessian and solving the linear system $$H_{f}^{-1} \nabla f $$ is very expensive. |
 
+\*\*\*\*
+
+**自适应性梯度下降**
+
 **Adagrad**
 
 Adagrad is an algorithm for gradient-based optimization that does just this: It adapts the learning rate to the parameters, performing smaller updates \(i.e. low learning rates\) for parameters associated with frequently occurring features, and larger updates \(i.e. high learning rates\) for parameters associated with infrequent features.
@@ -372,13 +376,52 @@ $$\theta_{t+1} = \theta_{t} - \dfrac{\eta}{\sqrt{G_{t} + \epsilon}} \odot g_{t}$
 | :--- | :--- |
 | it eliminates the need to manually tune the learning rate. Most implementations use a default value of 0.01 and leave it at that. | its accumulation of the squared gradients in the denominator: Since every added term is positive, the accumulated sum keeps growing during training. This in turn causes the learning rate to shrink and eventually become infinitesimally small, at which point the algorithm is no longer able to acquire additional knowledge. \(学习的变化幅度越来越小，因为要除以梯度的开方\) |
 
+\*\*\*\*
+
 **Adadelta**
 
  Adadelta is an extension of Adagrad that seeks to reduce its aggressive, monotonically decreasing learning rate. Instead of accumulating all past squared gradients, Adadelta restricts the window of accumulated past gradients to some fixed size $$w$$ ****.
 
 **Adadelta是Adagrad的延伸，将 以往梯度的加和 控制在一个值内。**
 
-**Adam**
+\*\*\*\*
+
+**Adam （**adaptive moment estimation**）**
+
+Adam 算法和传统的随机梯度下降不同。随机梯度下降保持单一的学习率（即 alpha）更新所有的权重，学习率在训练过程中并不会改变。而 Adam 通过计算梯度的一阶矩估计和二阶矩估计而为不同的参数设计独立的自适应性学习率。
+
+Adam 算法的提出者描述其为两种随机梯度下降扩展式的优点集合，即：
+
+适应性梯度算法（AdaGrad）为每一个参数保留一个学习率以提升在稀疏梯度（即自然语言和计算机视觉问题）上的性能。
+
+均方根传播（RMSProp）基于权重梯度最近量级的均值为每一个参数适应性地保留学习率。这意味着算法在非稳态和在线问题上有很有优秀的性能。
+
+Adam 算法同时获得了 AdaGrad 和 RMSProp 算法的优点。Adam 不仅如 RMSProp 算法那样基于一阶矩均值计算适应性参数学习率，它同时还充分利用了梯度的二阶矩均值（即有偏方差/uncentered variance）。具体来说，算法计算了梯度的指数移动均值（exponential moving average），超参数 beta1 和 beta2 控制了这些移动均值的衰减率。
+
+移动均值的初始值和 beta1、beta2 值接近于 1（推荐值），因此矩估计的偏差接近于 0。该偏差通过首先计算带偏差的估计而后计算偏差修正后的估计而得到提升。如果对具体的实现细节和推导过程感兴趣，可以继续阅读该第二部分和原论文。
+
+\*\*\*\*
+
+**在非凸优化问题上的优势：**
+
+* 直截了当地实现
+* 高效的计算
+* 所需内存少
+* 梯度对角缩放的不变性（第二部分将给予证明）
+* 适合解决含大规模数据和参数的优化问题
+* 适用于非稳态（non-stationary）目标
+* 适用于解决包含很高噪声或稀疏梯度的问题
+* 超参数可以很直观地解释，并且基本上只需极少量的调参
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
+
+\*\*\*\*
 
 \*\*\*\*
 
