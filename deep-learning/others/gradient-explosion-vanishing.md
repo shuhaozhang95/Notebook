@@ -61,7 +61,7 @@ _**使用不同的激活函数**_
 
 
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 从上图中，我们可以很容易看出，relu函数的导数在正数部分是恒等于1的，因此在深层网络中使用relu激活函数就不会导致梯度消失和爆炸的问题。
 
@@ -80,7 +80,7 @@ $$leakReLu=max(k∗x,x)  $$
 
 ![](../../.gitbook/assets/image.png)
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 比起leakReLu来 计算时间会更耗时一些。
 

@@ -18,7 +18,7 @@
         <p></p>
         <p></p>
         <p>
-          <img src="../../.gitbook/assets/image (13).png" alt/>
+          <img src="../../.gitbook/assets/image (14).png" alt/>
         </p>
       </td>
       <td style="text-align:left">
@@ -29,6 +29,12 @@
         <p>3&#x3001;&#x8BA1;&#x7B97;exp&#x6BD4;&#x8F83;&#x8017;&#x65F6;</p>
       </td>
       <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Softmax</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x5904;&#x7406;&#x591A;&#x7C7B;&#x522B;&#x7684;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;&#x6620;&#x5C04;&#x5230;&#xFF08;0&#xFF0C;1&#xFF09;&#x8303;&#x56F4;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x503C;&#x90FD;&#x4E3A;&#x6B63;&#x6570;&#x4E14;&#x52A0;&#x548C;&#x4E3A;1&#x3002;</td>
     </tr>
     <tr>
       <td style="text-align:center">Tanh</td>
@@ -63,4 +69,30 @@
     </tr>
   </tbody>
 </table>
+
+面试问题：
+
+Softmax与Cross entropy的关系
+
+ 一句话概括：**softmax**把分类输出标准化成概率分布，**cross-entropy（**交叉熵**）**刻画预测分类和真实结果之间的相似度。交叉熵损失函数是搭配softmax使用的损失函数。
+
+![Cross Entropy](../../.gitbook/assets/image%20%285%29.png)
+
+Sigmoid的求导：
+
+
+
+信息量：
+
+
+
+熵：
+
+
+
+相关熵（KL Divergence）：
+
+
+
+交叉熵：
 
