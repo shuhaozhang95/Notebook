@@ -114,15 +114,45 @@ X的熵定义为：$$H(X)=E_p\log \frac{1}{p(x)}=-\sum\limits_{x∈X}p(x)\log p(
 
 _**相关熵（KL Divergence）：**_
 
+相对熵\(relative entropy\)又称为KL散度（Kullback-Leibler divergence），KL距离，是两个随机分布间距离的度量。记为 _****_$$D_{KL}(p||q)$$ 。它度量当真实分布为p时，假设分布q的无效性。
+
+$$D_{KL}(p||q)=E_p[\log \frac{p(x)}{q(x)}]=\sum\limits_{x∈\mathcal{X}} p(x)\log \frac{p(x)}{q(x)}$$ 
+
+$$=\sum\limits_{x∈\mathcal{X}} [p(x)\log p(x)-p(x)\log q(x)]$$ 
+
+$$=\sum\limits_{x∈\mathcal{X}} p(x)\log p(x)-\sum\limits_{x∈\mathcal{X}} p(x)\log q(x)$$ 
+
+$$=-H(p)-\sum\limits_{x∈\mathcal{X}} p(x)\log q(x)$$ 
+
+$$=-H(p)+E_p[-\log q(x)]$$ 
+
+$$=H_p(q)-H(p)$$ 
+
+并且为了保证连续性，做如下约定： $$0\log \frac{0}{0}=0，0\log \frac{0}{q}=0，p\log \frac{p}{0}=∞$$ 
+
+显然，当p=q时,两者之间的相对熵 $$D_{KL}(p||q)=0$$ 
+
+上式最后的 $$H_p(q)$$ 表示在p分布下，使用q进行编码需要的bit数，而 $$H(p)$$ 表示对真实分布p所需要的最小编码bit数。基于此，相对熵的意义就很明确了： $$D_{KL}(p||q)$$ 表示在真实分布为p的前提下，使用q分布进行编码相对于使用真实分布p进行编码（即最优编码）所多出来的bit数。
 
 
 
+_**交叉熵 \(Cross Entropy\)：**_
 
+交叉熵容易跟相对熵搞混，二者联系紧密，但又有所区别。假设有两个分布p，q，则它们在给定样本集上的交叉熵定义如下：
 
+_\*\*\*\*_$$CEH(p,q)=E_p[-\log q]=-\sum\limits_{x∈\mathcal{X}} p(x)\log q(x)=H(p)+D_{KL}(p||q)$$ _****_
 
+可以看出，交叉熵与上一节定义的相对熵仅相差了 $$H(p)$$ ,当p已知时，可以把 $$H(p)$$ 看做一个常数，此时交叉熵与KL距离在行为上是等价的，都反映了分布p，q的相似程度。最小化交叉熵等于最小化KL距离。它们都将在p=q时取得最小值 $$H(p)$$ （p=q时KL距离为0），因此有的工程文献中将最小化KL距离的方法称为Principle of Minimum Cross-Entropy \(MCE\)或Minxent方法。
 
+在Logistic regression中，
 
+p:真实样本分布，服从参数为p的0-1分布，即X∼B\(1,p\) 
 
+q:待估计的模型，服从参数为q的0-1分布，即X∼B\(1,q\)
 
-_**交叉熵：**_
+他们的最优化交叉熵得到的结果与 最大似然估计得到的结果是 一致的。
+
+_\*\*\*\*_
+
+_\*\*\*\*_
 
