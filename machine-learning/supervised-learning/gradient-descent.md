@@ -400,7 +400,21 @@ Adam 算法同时获得了 AdaGrad 和 RMSProp 算法的优点。Adam 不仅如 
 
 移动均值的初始值和 beta1、beta2 值接近于 1（推荐值），因此矩估计的偏差接近于 0。该偏差通过首先计算带偏差的估计而后计算偏差修正后的估计而得到提升。如果对具体的实现细节和推导过程感兴趣，可以继续阅读该第二部分和原论文。
 
-\*\*\*\*
+Adaptive Moment Estimation \(Adam\) is another method that computes adaptive learning rates for each parameter. In addition to storing an exponentially decaying average of past squared gradients $$v_{t}$$ like Adadelta and RMSprop, Adam also keeps an exponentially decaying average of past gradients $$m_{t}$$ , similar to momentum. Whereas momentum can be seen as a ball running down a slope, Adam behaves like a heavy ball with friction, which thus prefers flat minima in the error surface. We compute the decaying averages of past and past squared gradients $$m_{t}$$ and $$v_{t}$$ respectively as follows:
+
+\*\*\*\*$$\begin{align}  \begin{split}  m_t &= \beta_1 m_{t-1} + (1 - \beta_1) g_t \\  v_t &= \beta_2 v_{t-1} + (1 - \beta_2) g_t^2  \end{split}  \end{align}$$ ****
+
+$$m_{t}$$ and $$v_{t}$$ are estimates of the first moment \(the mean\) and the second moment \(the uncentered variance\) of the gradients respectively, hence the name of the method. As $$m_{t}$$ and $$v_{t}$$ are initialized as vectors of 0's, the authors of Adam observe that they are biased towards zero, especially during the initial time steps, and especially when the decay rates are small \(i.e. $$\beta_{1}$$ and $$\beta_{2}$$ are close to 1\).
+
+They counteract these biases by computing bias-corrected first and second moment estimates:
+
+$$\begin{align}  \begin{split}  \hat{m}_t &= \dfrac{m_t}{1 - \beta^t_1} \\  \hat{v}_t &= \dfrac{v_t}{1 - \beta^t_2} \end{split}  \end{align}$$ 
+
+They then use these to update the parameters just as we have seen in Adadelta and RMSprop, which yields the Adam update rule:
+
+$$\theta_{t+1} = \theta_{t} - \dfrac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$ 
+
+The authors propose default values of $$0.9$$ for $$\beta_{1}$$ , $$0.999$$ for $$\beta_{2}$$ , and $$10^{-8}$$ for $$\epsilon$$ . They show empirically that Adam works well in practice and compares favorably to other adaptive learning-method algorithms.
 
 **在非凸优化问题上的优势：**
 
