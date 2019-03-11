@@ -35,6 +35,7 @@
   * [RNN/LSTM/GRU](deep-learning/classical-model/gru-lstm.md)
   * [GAN](deep-learning/classical-model/gan.md)
 * [Complex Model](deep-learning/complex-model/README.md)
+  * [n-Gram](deep-learning/complex-model/n-gram.md)
   * [ResNet](deep-learning/complex-model/resnet.md)
   * [BERT](deep-learning/complex-model/bert.md)
 * [Others](deep-learning/others/README.md)

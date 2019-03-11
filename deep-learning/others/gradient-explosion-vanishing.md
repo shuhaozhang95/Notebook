@@ -9,7 +9,7 @@
 * 预训练加微调
 * 梯度剪切、权重正则（针对梯度爆炸）
 * 使用不同的激活函数
-* 使用Batch Normalisation \(BN\)
+* 使用Batch Normalisation \(BN\) 
 * 使用残差结构
 * 使用LSTM网络
 
@@ -93,6 +93,8 @@ _**Batch Normalization \(BN\)**_
 即批规范化，通过规范化操作将输出信号x规范化保证网络的稳定性。具有加速网络收敛速度，提升训练稳定性的效果。
 
 正向传播中 $$f_{2} = f_{1} (w^{T} * x +b)$$，那么反向传播中， $$\frac{\partial f_{2} }{\partial x} = \frac{\partial f_{2}}{\partial f_{1}} w$$ , 反向传播式子中有 $$w$$ 的存在，所以 $$w$$ 的大小影响了梯度的消失和爆炸。Batch Normalisation就是通过对每一层的输出规范为均值和方差一致的方法，消除了 $$w$$ 带来的方法缩小的影响，进而解决梯度消失和爆炸的问题。
+
+具体实现原理： [https://blog.csdn.net/qq\_25737169/article/details/79048516](https://blog.csdn.net/qq_25737169/article/details/79048516)
 
 ​**一句话：每一层的输出进行规范化（减均值除方差）以后进入激活函数进入下一层。**
 
