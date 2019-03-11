@@ -23,6 +23,8 @@ _**预训练加微调**：**pre-training&fine-tunning**_
 
 梯度剪切这个方案主要是针对梯度爆炸提出的，其思想是设置一个梯度剪切阈值，然后更新梯度的时候，如果梯度超过这个阈值，那么就将其强制限制在这个范围之内。这可以防止梯度爆炸。
 
+![](../../.gitbook/assets/image%20%2818%29.png)
+
 `注：在WGAN中也有梯度剪切限制操作，但是和这个是不一样的，WGAN限制梯度更新信息是为了保证lipchitz条件。`
 
 另外一种解决梯度爆炸的手段是采用 _**权重正则化（Weights regularisation）**_
@@ -57,11 +59,11 @@ _**使用不同的激活函数**_
 
 **Relu:** _****_思想也很简单，如果激活函数的导数为1，那么就不存在梯度消失爆炸的问题了，每层的网络都可以得到相同的更新速度，relu就这样应运而生。先看一下relu的数学表达式：
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 
 从上图中，我们可以很容易看出，relu函数的导数在正数部分是恒等于1的，因此在深层网络中使用relu激活函数就不会导致梯度消失和爆炸的问题。
 
@@ -80,7 +82,7 @@ $$leakReLu=max(k∗x,x)  $$
 
 ![](../../.gitbook/assets/image.png)
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 比起leakReLu来 计算时间会更耗时一些。
 
