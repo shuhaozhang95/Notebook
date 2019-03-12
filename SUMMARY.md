@@ -18,6 +18,7 @@
   * [K-Nearest Neighbor](machine-learning/supervised-learning/knn.md)
   * [Evaluation](machine-learning/supervised-learning/evaluation.md)
 * [Unsupervised Learning](machine-learning/unsupervised-learning/README.md)
+  * [LDA](machine-learning/unsupervised-learning/lda.md)
   * [HMM/CRF](machine-learning/unsupervised-learning/hmm-crf.md)
   * [K-mean](machine-learning/unsupervised-learning/k-mean-knn.md)
   * [Gaussian Mixture Model](machine-learning/unsupervised-learning/gaussian-mixture-model.md)
