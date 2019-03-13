@@ -37,7 +37,7 @@ LDA是一种主题模型，它可以将**文档集 中每篇文档的主题以�
 
                                          **先验分布**![](https://img-blog.csdn.net/20141110214925523) **+ 样本信息**![](https://img-blog.csdn.net/20141110211153578) ****![](https://img-blog.csdn.net/20141110190250086) **后验分布**![](https://img-blog.csdn.net/20141110215058639)
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
  针对于这种**观测到的数据符合多项分布，参数的先验分布和后验分布都是Dirichlet 分布**的情况，**就是Dirichlet-Multinomial 共轭**。换言之，至此已经证明了Dirichlet分布的确就是多项式分布的共轭先验概率分布。
 
@@ -62,45 +62,61 @@ LDA模型中一篇文档生成的方式是怎样的：
 
 PLSA中，主题分布和词分布是唯一确定的，能明确的指出主题分布可能就是{教育：0.5，经济：0.3，交通：0.2}，词分布可能就是{大学：0.5，老师：0.3，课程：0.2}。但在LDA中，主题分布和词分布不再唯一确定不变，即无法确切给出。例如主题分布可能是{教育：0.5，经济：0.3，交通：0.2}，也可能是{教育：0.6，经济：0.2，交通：0.2}，到底是哪个我们不再确定（即不知道），因为它是随机的可变化的。但再怎么变化，也依然服从一定的分布，即主题分布跟词分布由Dirichlet先验随机确定。
 
+-----------------------------------------------
+
+1. 假定语料库中共有M篇文章，每篇文章下的Topic的主题分布是一个从参数为的Dirichlet先验分布中采样得到的Multinomial分布，每个Topic下的词分布是一个从参数为的Dirichlet先验分布中采样得到的Multinomial分布。
+2. 对于某篇文章中的第n个词，首先从该文章中出现的每个主题的Multinomial分布（主题分布）中选择或采样一个主题，然后再在这个主题对应的词的Multinomial分布（词分布）中选择或采样一个词。不断重复这个随机生成过程，直到M篇文章全部生成完成。
+
+综上，M 篇文档会对应于 M 个独立的 Dirichlet-Multinomial 共轭结构，K 个 topic 会对应于 K 个独立的 Dirichlet-Multinomial 共轭结构。
+
+* 其中，![](https://img-blog.csdn.net/20141117160438989)→θ→z 表示生成文档中的所有词对应的主题，显然 ![](https://img-blog.csdn.net/20141117160438989)→θ 对应的是Dirichlet 分布，θ→z 对应的是 Multinomial 分布，所以整体是一个 Dirichlet-Multinomial 共轭结构，如下图所示：
+
+![](../../.gitbook/assets/image%20%282%29.png)
+
+* 类似的，![](https://img-blog.csdn.net/20141117160531515)→φ→w，容易看出， 此时β→φ对应的是 Dirichlet 分布， φ→w 对应的是 Multinomial 分布， 所以整体也是一个Dirichlet-Multinomial 共轭结构，如下图所示：
+
+![](../../.gitbook/assets/image%20%2821%29.png)
+
+ 在LDA这个估计主题分布、词分布的过程中，它们的先验分布（即Dirichlet分布）事先由人为给定，那么LDA就是要去求它们的后验分布（LDA中可用gibbs采样去求解它们的后验分布，得到期望![](https://img-blog.csdn.net/20141122141624588)、![](https://img-blog.csdn.net/20141122141643109)）！
 
 
 
+_**Gibbs Sampling**_
 
+**Gibbs sampling** is one MCMC. technique suitable for the task. The idea in **Gibbs sampling** is to generate posterior **samples**. by sweeping through each variable \(or block of variables\) to **sample** from its conditional. distribution with the remaining variables fixed to their current values.
 
+给定一个文档集合，w是可以观察到的已知变量，![](https://img-blog.csdn.net/20141117160438989)和![](https://img-blog.csdn.net/20141117160531515)是根据经验给定的先验参数，其他的变量z，θ和φ都是未知的隐含变量，需要根据观察到的变量来学习估计的。根据LDA的图模型，可以写出所有变量的联合分布：
 
+![](../../.gitbook/assets/image%20%284%29.png)
 
+ 注：上述公式中及下文中，![](https://img-blog.csdn.net/20141121011305243)等价上文中定义的![](https://img-blog.csdn.net/20141117160518098)，![](https://img-blog.csdn.net/20141121011310969)等价于上文中定义的![](https://img-blog.csdn.net/20141117160656067)，![](https://img-blog.csdn.net/20141121011424772)等价于上文中定义的![](https://img-blog.csdn.net/20141117160613962)， $$\theta_{m}$$ 等价于上文中定义的![](https://img-blog.csdn.net/20141117160452327)。
 
+ 因为![](https://img-blog.csdn.net/20141117160438989)产生主题分布θ，主题分布θ确定具体主题，且![](https://img-blog.csdn.net/20141117160531515)产生词分布φ、词分布φ确定具体词，所以上述式子等价于下述式子所表达的**联合概率分布**![](https://img-blog.csdn.net/20141121101528765)：
 
+![](../../.gitbook/assets/image%20%287%29.png)
 
+ 其中，**第一项因子**![](https://img-blog.csdn.net/20141121101735203)**表示的是根据确定的主题**![](https://img-blog.csdn.net/20141121102832253)**和词分布的先验分布参数**![](https://img-blog.csdn.net/20141117160531515)**采样词的过程，第二项因子**![](https://img-blog.csdn.net/20141121101731716)**是根据主题分布的先验分布参数**![](https://img-blog.csdn.net/20141117160438989)**采样主题的过程，这两项因子是需要计算的两个未知参数**。
 
+![](../../.gitbook/assets/image%20%286%29.png)
 
+ 接下来，**有了联合分布**![](https://img-blog.csdn.net/20141121101528765)**，咱们便可以通过联合分布来计算在给定可观测变量 w 下的隐变量 z 的条件分布（后验分布）**![](https://img-blog.csdn.net/20141124000913687)**来进行贝叶斯分析**。
 
+![](../../.gitbook/assets/image%20%2826%29.png)
 
+ 最后一步，便是根据Markov链的状态![](https://img-blog.csdn.net/20141121103415953)获取主题分布的参数Θ和词分布的参数Φ。
 
+即通过对一个主题中的词抽样，不断循环这个过程，最后收敛之后，取出来的每个主题词分布就是后验。最后我们就得到了 收敛的 $$\theta_{mk} $$ , $$\varphi_{kt}$$。我们可以把Gibbs Sampling N个迭代完的结果取平均来做参数估计，这样的话模型质量更高。
 
+然后topic-word矩阵就是我们要的频率矩阵，也就是LDA模型。
 
+有了LDA模型，对于新来的文档，我们可以对该文档做topic语义分布的计算。基本上inference的过程跟training的过程十分相似。对于新的文档，我们只要认为Gibbs Sampling公式中的 $$\theta_{kt} $$ 是不变的，是由训练语料得到的模型提供的，所以采样过程中我们只用统计该文档中topic分布就可以了
 
+LDA inference:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. 随机初始化，对当前文档中的每个词 $$w$$ , 随机赋一个Topic的编号 $$z$$ .
+2. 重新扫描当前文档，按照Gibbs Sampling的公司，对每个词 $$w$$ ，重新采样它的topic.
+3. 重复以上过程知道Gibbs Sampling收敛
+4. 统计文档中的topic分布，这分布就是新文档的topic分布。
 
 
 

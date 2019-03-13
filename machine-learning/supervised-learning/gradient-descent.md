@@ -267,7 +267,7 @@ SGD也是对每一个样本更新梯度，所以Online Gradient Descent 跟 SGD�
 
 共轭梯度法加入了Line Search来限制方向，避免梯度下降可能出去锯齿的情况。
 
-![Red line: conjugate gradient ](../../.gitbook/assets/image%20%2814%29.png)
+![Red line: conjugate gradient ](../../.gitbook/assets/image%20%2818%29.png)
 
 
 
