@@ -85,6 +85,24 @@ _**Gibbs Sampling**_
 
 **Gibbs sampling** is one MCMC. technique suitable for the task. The idea in **Gibbs sampling** is to generate posterior **samples**. by sweeping through each variable \(or block of variables\) to **sample** from its conditional. distribution with the remaining variables fixed to their current values.
 
+证明Gibbs Sampling可以收敛到目标分布：
+
+即证明Gibbs Sampling满足Detailed Balance. 即满足 $$p(x)T(x \rightarrow x') = p(x') T(x' \rightarrow x)$$ 
+
+The transition probabilities are given by: $$T(x \rightarrow x') = \pi_{i} p(x_{i}'| x_{\backslash i}) $$ , where $$\pi_{i}$$ is the probability of choosing to update the $$i $$ th variable. \(to handle rotation updates instead of random ones, we need to consider transitions due to one full sweep\).
+
+Then we have:
+
+ $$T(x \rightarrow x') p(x) = \pi_{i} p(x_{i}' | x_{\backslash i}) \underbrace{ p(x_{i} | x_{\backslash i}) p(x_{\backslash i})}_{p(x)}$$ 
+
+and 
+
+$$T(x' \rightarrow x) p(x') = \pi_{i} p(x_{i} | x'_{\backslash i}) \underbrace{ p(x_{i} | x'_{\backslash i}) p(x'_{\backslash i})}_{p(x')}$$ 
+
+But $$x'_{\backslash i } = x_{\backslash i}$$ so detailed balance holds.
+
+
+
 给定一个文档集合，w是可以观察到的已知变量，![](https://img-blog.csdn.net/20141117160438989)和![](https://img-blog.csdn.net/20141117160531515)是根据经验给定的先验参数，其他的变量z，θ和φ都是未知的隐含变量，需要根据观察到的变量来学习估计的。根据LDA的图模型，可以写出所有变量的联合分布：
 
 ![](../../.gitbook/assets/image%20%284%29.png)
