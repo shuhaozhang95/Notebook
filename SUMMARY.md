@@ -15,6 +15,7 @@
   * [Decision Tree](machine-learning/supervised-learning/tree-random-forest.md)
   * [RF/GDBT/XGBOOST](machine-learning/supervised-learning/gdbt-xgboost.md)
   * [Support Vector Machine](machine-learning/supervised-learning/support-vector-machine.md)
+  * [Gaussian Process](machine-learning/supervised-learning/gaussian-process.md)
   * [K-Nearest Neighbor](machine-learning/supervised-learning/knn.md)
   * [Evaluation](machine-learning/supervised-learning/evaluation.md)
 * [Unsupervised Learning](machine-learning/unsupervised-learning/README.md)
