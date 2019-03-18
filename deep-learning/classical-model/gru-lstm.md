@@ -28,7 +28,7 @@ _**RNN**_
 
 其中 ![\boldsymbol W\_{xh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bxh%7D) 和 ![\boldsymbol W\_{hh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bhh%7D) 是可学习的参数矩阵，激活函数tanh独立地应用到其输入的每个元素。
 
-![](../../.gitbook/assets/image%20%2834%29.png)
+![](../../.gitbook/assets/image%20%2835%29.png)
 
 
 
@@ -63,7 +63,7 @@ GRU是另一种十分主流的RNN衍生物。 RNN和LSTM都是在设计网络结
 
 简化后：
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 ![](../../.gitbook/assets/image%20%288%29.png)
 
