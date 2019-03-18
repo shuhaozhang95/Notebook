@@ -138,6 +138,24 @@ LDA inference:
 
 
 
+LDA如何调参：
+
+LDA中的主要超参数有alpha, beta, K topic个数。其中alpha, beta可以是向量。
+
+alpha 是 选择为 50/ k, 其中k是你选择的topic数，beta一般选为0.01吧，，这都是经验值，貌似效果比较好，收敛比较快一点
+
+
+
+LDA中topic个数的确定是一个困难的问题。当各个topic之间的相似度的最小的时候，就可以算是找到了合适的topic个数。参考[一种基于密度的自适应最优LDA模型选择方法](https://link.zhihu.com/?target=http%3A//mcg.ict.ac.cn/download/pdf/paper/2008/32.%25E4%25B8%2580%25E7%25A7%258D%25E5%259F%25BA%25E4%25BA%258E%25E5%25AF%2586%25E5%25BA%25A6%25E7%259A%2584%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%259C%2580%25E4%25BC%2598LDA%25E6%25A8%25A1%25E5%259E%258B%25E9%2580%2589%25E6%258B%25A9%25E6%2596%25B9%25E6%25B3%2595.pdf) ，简略过程如下：
+
+1. 选取初始K值，得到初始模型，计算各topic之间的相似度
+2. 增加或减少K的值，重新训练得到模型，再次计算topic之间的相似度
+3. 重复第二步直到得到最优的K
+
+
+
+正如分类问题用Accuracy来评价，LDA也自己评价标准叫Perplexity。Perplexity（混乱）可以粗略的理解为“对于一篇文章，我们的LDA模型有多**不确定**它是属于某个topic的”。topic越多，Perplexity越小，但是越容易overfitting。我们利用Model Selection找到Perplexity又好，topic个数又少的topic数量。可以画出Perplexity vs num of topics曲线，找到满足要求的点。  
+  
 
 
 

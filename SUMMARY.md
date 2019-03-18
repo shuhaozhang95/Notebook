@@ -79,6 +79,11 @@
 
 * [Traditional model](time-series-analysis/traditional-model.md)
 
+## Risk Control
+
+* [Scored Card Model](risk-control/scored-card-model.md)
+* [Graph Neural Network](risk-control/graph-neural-network.md)
+
 ## Python
 
 * [Command](python/command.md)
