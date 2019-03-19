@@ -28,7 +28,7 @@ _**RNN**_
 
 其中 ![\boldsymbol W\_{xh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bxh%7D) 和 ![\boldsymbol W\_{hh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bhh%7D) 是可学习的参数矩阵，激活函数tanh独立地应用到其输入的每个元素。
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/image%20%2840%29.png)
 
 
 
@@ -44,9 +44,9 @@ LSTM（Long Short-Term Memory）由Hochreiter和Schmidhuber提出，其数学上
 
 简化后，
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
-![](../../.gitbook/assets/image%20%2814%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 * **输出门** ![o\_{t-1}](https://www.zhihu.com/equation?tex=o_%7Bt-1%7D)：输出门的目的是从细胞状态 ![\boldsymbol c\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+c_%7Bt-1%7D) 产生隐层单元 ![\boldsymbol h\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+h_%7Bt-1%7D) 。并不是 ![\boldsymbol c\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+c_%7Bt-1%7D) 中的全部信息都和隐层单元 ![\boldsymbol h\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+h_%7Bt-1%7D) 有关， ![\boldsymbol c\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+c_%7Bt-1%7D) 可能包含了很多对 ![\boldsymbol h\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+h_%7Bt-1%7D) 无用的信息。因此， ![o\_t](https://www.zhihu.com/equation?tex=o_t) 的作用就是判断 ![\boldsymbol c\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+c_%7Bt-1%7D) 中哪些部分是对 ![\boldsymbol h\_{t-1}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+h_%7Bt-1%7D) 有用的，哪些部分是无用的。
 * **输入门** ![i\_t](https://www.zhihu.com/equation?tex=i_t)。![i\_t](https://www.zhihu.com/equation?tex=i_t) 控制当前词 ![\boldsymbol x\_t](https://www.zhihu.com/equation?tex=%5Cboldsymbol+x_t) 的信息融入细胞状态 ![\boldsymbol c\_t](https://www.zhihu.com/equation?tex=%5Cboldsymbol+c_t) 。在理解一句话时，当前词 ![\boldsymbol x\_t](https://www.zhihu.com/equation?tex=%5Cboldsymbol+x_t) 可能对整句话的意思很重要，也可能并不重要。输入门的目的就是判断当前词 ![\boldsymbol x\_t](https://www.zhihu.com/equation?tex=%5Cboldsymbol+x_t) 对全局的重要性。当 ![i\_t](https://www.zhihu.com/equation?tex=i_t) 开关打开的时候，网络将不考虑当前输入 ![\boldsymbol x\_t](https://www.zhihu.com/equation?tex=%5Cboldsymbol+x_t) 。
@@ -63,9 +63,9 @@ GRU是另一种十分主流的RNN衍生物。 RNN和LSTM都是在设计网络结
 
 简化后：
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2835%29.png)
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 _\*\*\*\*_
 
