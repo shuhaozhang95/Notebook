@@ -37,7 +37,37 @@ $$X^{T}AX > 0$$ 为正定
 
 _**高斯过程回归预测**_ 
 
+根据已有的X，我们可以写出已有的多元正太分布：
+
+$$f| X, K \sim N(m(\cdot), K_{XX})$$ 
+
+然后我们把新的预测输入也加入可以得到：
+
+$$f, f_{*} | X, K  \sim N(m(\cdot),  \left [ \begin{matrix}     K_{XX}+ \sigma^{2}I & K_{X*}  \\    K_{*X} & K_{**}  \\   \end{matrix} \right])$$ 
+
+然后我们去计算条件分布：
+
+$$f_{*} |X,y, X_{*} \sim N(\overline{f}_{*}, cov(f_{*}))$$ 
+
+于是我们得到：
+
+$$\overline{f}_{*} = E[f_{*}| X, y, X_{*}] = K_{*X}[K_{XX}+\sigma^{2}I]^{-1}y$$ 
+
+$$cov(f_{*} ) = K_{**} - K_{*X}[K_{XX}+ \sigma^{2}I]^{-1}K_{X*}$$ 
+
 
 
 _**高斯过程回归优化**_
+
+我们可以通过优化multivariate Gaussian Likelihood $$P(Y|X) $$ 来优化kernel中的超参数
+
+一般的做法都是gradient descent in $$\log P(Y|X)$$ 
+
+_\*\*\*\*_
+
+_\*\*\*\*_
+
+_\*\*\*\*_
+
+_\*\*\*\*_
 
