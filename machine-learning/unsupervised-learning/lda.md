@@ -1,5 +1,7 @@
 # LDA
 
+还有较为简单的模型LSA（主要用过SVD分解）, PLSA
+
 概率主题模型：隐含狄利克雷分布（Latent Dirichlet Allocation，简称LDA）
 
 理解LDA，可以分为下述5个步骤：
