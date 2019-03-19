@@ -1,4 +1,6 @@
-# Skip-gram
+# Skip-gram & CBOW
+
+{% embed url="http://www.cnblogs.com/pinard/p/7160330.html" %}
 
 {% embed url="http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/" %}
 
@@ -67,7 +69,7 @@ skipgram model 常常让人惊讶于它的简单结构。我认为基本没啥�
 
 ‘ant‘的1×3001×300 的word vector 然后传到了输出层。输出层是一个softmax 的分类器（译者按：我认为不是regression，就是classification吧）主旨就是把每个输出normal到0～1之间，并且这些输出的和为1。
 
-更具体的来说，每个word vector（1×3001×300）将会乘一个W\(300×10,000300×10,000\)再次映射到 10,000维，每一维代表临近词的概率。而这些概率做一个softmax的normal（就是图中的exp 的函数，来归一化）。 下面是一张说明图。 
+更具体的来说，每个word vector（1×3001×300）将会乘一个W\(300×10,000\)再次映射到 10,000维，每一维代表临近词的概率。而这些概率做一个softmax的normal（就是图中的exp 的函数，来归一化）。 下面是一张说明图。 
 
 ![](../../../.gitbook/assets/image%20%2813%29.png)
 

@@ -107,5 +107,9 @@ a:b 与 c:d的cos距离 \(man-king woman-queen \)
 
 
 
+**Skip-gram与CBOW的比较**
+
+skip gram的训练时间更长，但是对于一些出现频率不高的词，在CBOW中的学习效果就不日skipgram。反正mikolov自己说的skip准确率比CBOW高。。。
+
 
 
