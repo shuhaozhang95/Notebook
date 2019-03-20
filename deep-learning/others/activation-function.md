@@ -18,7 +18,7 @@
         <p></p>
         <p></p>
         <p>
-          <img src="../../.gitbook/assets/image (39).png" alt/>
+          <img src="../../.gitbook/assets/image (41).png" alt/>
         </p>
       </td>
       <td style="text-align:left">
@@ -76,7 +76,7 @@ _**Softmax与Cross entropy的关系**_
 
  一句话概括：**softmax**把分类输出标准化成概率分布，**cross-entropy（**交叉熵**）**刻画预测分类和真实结果之间的相似度。交叉熵损失函数是搭配softmax使用的损失函数。
 
-![Cross Entropy](../../.gitbook/assets/image%20%2822%29.png)
+![Cross Entropy](../../.gitbook/assets/image%20%2823%29.png)
 
 _**Sigmoid的求导：**_
 
