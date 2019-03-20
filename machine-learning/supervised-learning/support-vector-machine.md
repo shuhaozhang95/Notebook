@@ -31,7 +31,19 @@ if $$\Omega$$ is strictly increasing, the solution must have this form.
 
 > A function $$f$$ is **convex** if its domain $$domf$$ is a convex set and if $$\forall x,y \in dom f$$, and any $$0 \le \theta \le 1$$, $$f(\theta x + (1-\theta)y) \le \theta f(x) +(1-\theta)f(y)$$. The function is **strictly convex** if the inequality is strict for $$x \neq y$$  .
 
-Generic Optimisation problem 
+Generic Optimisation problem on $$x \in \mathcal{R}^{n}$$ ,
+
+$$minimize \quad f_{0}(x) \\subject \ to \quad f_{i}(x) \le 0 \quad i=1,...,m (5)\\\quad \quad \quad \quad\quad \ h_{i}(x) = 0 \quad i=1,...,p$$ 
+
+$$p^{*}$$ the optimal value of \(5\), $$\mathcal{D}$$ assumed nonempty, where
+
+$$D:= \bigcap^{m}_{i=0} domf_{i} \cap \bigcap^{p}_{i=1} domh_{i} \\ (dom f_{i} = subset\ of \ \mathcal{R}^{n} \ where \ f_{i} \ defined.)$$  
+
+Ideally we would want an unconstrained problem, Hence, we have
+
+$$minimize \quad f_{0}(x) + \sum^{m}_{i=1} I\_(f_{i}(x)) +\sum^{p}_{i=1} I_{0}(h_{i}(x))$$ 
+
+where $$I\_(u) = $$ 
 
 ## Support vector classification
 
