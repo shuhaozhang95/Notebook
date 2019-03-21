@@ -157,9 +157,32 @@ $$\min_{w,b,\xi} (\frac{1}{2} \lVert w \rVert^{2}+ C\sum^{n}_{i=1} \xi_{i})$$
 
 $$subject \ to \quad \xi_{i}\ge0 \quad y_{i}(w^{T}x_{i}+b) \ge 1- \xi_{i}$$ 
 
+我们可以为此写出拉格朗日方程
 
+The Lagrangian:
 
+$$L(w,b,\xi, \alpha, \lambda) = \frac{1}{2} \lVert w \rVert^{2} +C \sum^{n}_{i=1} \xi_{i} +\sum^{n}_{i=1} \alpha_{i} (1- y_{i}(w^{T}x_{i}+b)-\xi_{i})+ \sum^{n}_{i=1} \lambda_{i} (-\xi_{i})$$ 
 
+with dual variable constraints: $$\alpha_{i} \ge 0, \lambda_{i} \ge 0$$. Thus _**Minimize wrt the primal variables**_ $$w,b,\xi$$ 
+
+Derivative wrt $$w$$ : $$\frac{\partial L}{\partial w} = w- \sum^{n}_{i=1} \alpha_{i} y_{i} x_{i} = 0 \quad w = \sum^{n}_{i=1} \alpha_{i} y_{i}x_{i}$$ 
+
+Derivative wrt $$b$$ : $$\frac{\partial L}{\partial b} = \sum_{i} y_{i} \alpha_{i} =0$$ 
+
+Derivative wrt $$\xi_{i}$$: $$\frac{\partial L}{\partial \xi_{i}} = C - \alpha_{i} - \lambda_{i} = 0 \quad \alpha_{i} = C- \lambda_{i}$$ 
+
+Noting that $$\lambda_{i} \ge 0, \alpha_{i} \le C$$ 
+
+Now use _**complementary slackness**_: 我们可以分为三种情况 根据错误点
+
+_**Non-margin SVs**_: $$\alpha_{i} = C \ne 0$$ 即没有分类错误的情况 错误点也没有在边界上
+
+* $$1-\xi_{i} = y_{i}(w^{T}x_{i}+b)$$ 
+* $$\alpha_{i} =C-\lambda_{i}, \lambda_{i}=0, \xi_{i} >0$$ 
+
+_**Margin SVs**_: $$a = b$$ 
+
+_**Non-SVs**_:
 
 
 

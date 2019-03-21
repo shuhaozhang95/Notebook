@@ -90,4 +90,5 @@
 ## Python
 
 * [Command](python/command.md)
+* [LaTeX](python/latex.md)
 
