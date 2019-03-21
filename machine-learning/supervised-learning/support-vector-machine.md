@@ -81,6 +81,50 @@ Then, we can also show: When $$\lambda \succeq 0$$ , then for all $$\nu$$ we hav
 >
 > This holds for every feasible $$\widetilde{x}$$ , hence lower bound holds.
 
+然后我们的目标转换为 最大化 $$g(\lambda, \nu)$$     
+
+Lagrange dual problem
+
+$$maximize \quad g(\lambda, \nu) \\ subject \ to  \quad \lambda \succeq 0$$ 
+
+**Dual feasible**: $$(\lambda, \nu) $$ with $$\lambda \succeq 0$$ and $$g(\lambda, \nu) > - \infty$$
+
+**Dual optimal**: solutions $$(\lambda^{*}, \nu^{*})$$ maximizing dual, $$d^{*}$$ is optimal value 
+
+_**Weak duality**_ : always holds: $$d^{*} \le p^{*}$$ 
+
+_**Strong duality**_: \(does not always hold, conditions given later\): $$d^{*} = p^{*}$$ 
+
+Conditions: 
+
+* primal problem convex and 
+* constraint functions satisfy _**Slater's conditions**_ then strong duality holds.
+* if in addition functions $$f_{i}, h_{i}$$ _**differentiable**_ then KKT conditions necessary and sufficient for optimality.
+
+### KKT conditions for global optimum
+
+Assume functions $$f_{i}, h_{i}$$ are _**differentiable**_ and _**strong duality**_. Since $$x^{*}$$ minimizes $$L(x, \lambda^{*}, \nu^{*})$$, derivative at $$x^{*}$$ is zero,
+
+$$\nabla f_{0}(x^{*}) +\sum^{m}_{i=1} \lambda_{i}^{*} \nabla f_{i}(x^{*}) +\sum^{p}_{i=1} \nu_{i}^{*} \nabla h_{i}(x^{*}) =0.$$ 
+
+_**KKT conditions definition**_: we are at _**global optimum**_,  $$(x, \lambda, \nu) = (x^{*}, \lambda^{*}, \nu^{*}) $$ when \(a\) _**strong duality**_ holds, and \(b\) 
+
+primal feasibility 
+
+$$f_{i}(x) \le 0, i=1,...,m \\ h_{i}(x) = 0, i=1,...,p$$ 
+
+dual feasibility 
+
+$$\lambda_{i} \ge 0, i=1,...,m$$ 
+
+complementary slackness
+
+$$\lambda_{i} f_{i}(x) = 0, i=1,...,m$$ 
+
+Zero derivatives:
+
+$$\nabla f_{0}(x) +\sum^{m}_{i=1} \lambda_{i} \nabla f_{i}(x) +\sum^{p}_{i=1} \nu_{i} \nabla h_{i}(x) =0$$ 
+
 ## Support vector classification
 
 {% embed url="http://www.gatsby.ucl.ac.uk/~gretton/coursefiles/Slides5A.pdf" %}
