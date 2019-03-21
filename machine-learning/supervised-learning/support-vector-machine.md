@@ -57,7 +57,29 @@ and has domain $$domL:= \mathcal{D} \times \mathcal{R}^{m} \times \mathcal{R}^{p
 
 The _**Lagrange dual function**_: minimize Lagrangian 
 
-when 
+when $$\lambda \succeq 0$$ and $$f_{i}(x) \le 0$$ , Lagrange dual function is
+
+$$g(\lambda, \nu):= \inf_{x\in \mathcal{D}} L(x, \lambda, \nu)$$ 
+
+A _**dual feasible**_ pair $$(\lambda, \nu)$$ is a pair for which $$\lambda \succeq 0 $$ and $$(\lambda, \nu) \in dom(g)$$ .
+
+we can show that: for any $$\lambda \succeq 0$$ and $$\nu$$, $$g(\lambda, \nu) \le f_{0}(x)$$, wherever $$f_{i}(x) \le 0$$ , $$h_{i}(x)=0$$ .\( Including at $$f_{0}(x^{*}) = p^{*}$$ \).
+
+Then, we can also show: When $$\lambda \succeq 0$$ , then for all $$\nu$$ we have $$g(\lambda, \nu) \le p^{*}$$ 
+
+即Largrange dual is lower bound on $$p^{*}$$ .
+
+> Proof:
+>
+> Assume $$\widetilde{x}$$ is feasible, i.e. $$f_{i}(\widetilde{x}) \le 0$$, $$h_{i}(\widetilde{x}) =0$$, $$\widetilde{x} \in \mathcal{D}$$ , $$\lambda \succeq 0$$ . Then, 
+>
+> $$\sum^{m}_{i=1} \lambda_{i} f_{i}(\widetilde{x}) + \sum^{p}_{i=1} \nu_{i}h_{i}(\widetilde{x}) \le 0$$ 
+>
+> Thus, 
+>
+> $$g(\lambda, \nu):= \inf_{x \in \mathcal{D}}\left( f_{0}(x)+ \sum^{m}_{i=1}\lambda_{i}f_{i}(x) +\sum^{p}_{i=1} \nu_{i}h_{i}(x) \right) \\ \le f_{0}(\widetilde{x}) +\sum^{m}_{i=1} \lambda_{i}f_{i}(\widetilde{x}) +\sum^{p}_{i=1}\nu_{i}h_{i}(\widetilde{x}) \\ \le f_{0}(\widetilde{x})$$ 
+>
+> This holds for every feasible $$\widetilde{x}$$ , hence lower bound holds.
 
 ## Support vector classification
 
