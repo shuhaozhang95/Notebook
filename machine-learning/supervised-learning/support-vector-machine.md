@@ -127,6 +127,56 @@ $$\nabla f_{0}(x) +\sum^{m}_{i=1} \lambda_{i} \nabla f_{i}(x) +\sum^{p}_{i=1} \n
 
 ## Support vector classification
 
+ 
+
+![](../../.gitbook/assets/1.PNG)
+
+Smallest distance from each class to the _**separating hyperplane**_ $$w^{T}x+b$$ is called the _**margin**_.
+
+This problem can be expressed as follows: 
+
+$$\max_{w,b} (margin) = \max_{w,b} (\frac{2}{\lVert w\rVert})$$ 
+
+$$subject \ to \ \left\{ \begin{aligned} \min(w^{T}x_{i}+b) & = 1  \quad & i: y_{i} =+1 \\ \max(w^{T}x_{i}+b) & = -1 \quad & i:y_{i} = -1 \\  \end{aligned} \right.$$ 
+
+The resulting classifier is $$y = sign(w^{T}x+b)$$ 
+
+当我们允许有少部分错误时，我们可以把式子写成：
+
+$$\min_{w,b} (\frac{1}{2} \lVert w \rVert^{2} + C \sum^{n}_{i=1} \mathbb{I}[y_{i}(w^{T}x+b)<0])$$  这里的 $$\mathbb{I}$$ 表示个数
+
+where C controls the trade off between maximum margin and loss.
+
+然后这里我们换成Hinge loss\(为了有一个convex upper bound\)
+
+$$\min_{w,b} (\frac{1}{2} \lVert w \rVert^{2}+C \sum^{n}_{i=1} \theta (y_{i}(w^{T}x_{i}+b)))$$ 
+
+为了弥补换成Hinge loss造成的差异 我们加入新的参数 $$\xi$$
+
+$$\min_{w,b,\xi} (\frac{1}{2} \lVert w \rVert^{2}+ C\sum^{n}_{i=1} \xi_{i})$$ 
+
+$$subject \ to \quad \xi_{i}\ge0 \quad y_{i}(w^{T}x_{i}+b) \ge 1- \xi_{i}$$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% embed url="http://www.gatsby.ucl.ac.uk/~gretton/coursefiles/Slides5A.pdf" %}
 
 
