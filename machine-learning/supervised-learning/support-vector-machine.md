@@ -175,18 +175,26 @@ Noting that $$\lambda_{i} \ge 0, \alpha_{i} \le C$$
 
 Now use _**complementary slackness**_: 我们可以分为三种情况 根据错误点
 
-_**Non-margin SVs**_: $$\alpha_{i} = C \ne 0$$ 即没有分类错误的情况 错误点也没有在边界上
+_**Non-margin SVs**_: $$\alpha_{i} = C \ne 0$$ 即可以说明 $$\alpha_{i} $$在两条间隔边界之间 
 
 * $$1-\xi_{i} = y_{i}(w^{T}x_{i}+b)$$ 
 * $$\alpha_{i} =C-\lambda_{i}, \lambda_{i}=0, \xi_{i} >0$$ 
 
-_**Margin SVs**_: $$a = b$$ 
+_**Margin SVs**_: $$0< \alpha_{i} < C$$ 表明 $$\alpha_{i}$$ 是支持向量，在间隔边界上
 
-_**Non-SVs**_:
+* $$1-\xi_{i} = y_{i}(w^{T}x_{i}+b)$$ 
+* $$\alpha_{i} = C- \lambda_{i}, \lambda_{i} \ne 0, \xi_{i}=0$$ 
 
+_**Non-SVs**_: $$\alpha_{i}=0$$ 表明 $$\alpha_{i}$$ 是正常分类，在间隔边界的内部
 
+* $$y_{i}(w^{T}x_{i}+b) > 1-\xi_{i}$$ 
+* $$\alpha_{i} = C - \lambda_{i}, \lambda_{i} \ne 0, \xi_{i}=0$$ 
 
+Thus, our goal is to maximize the dual,
 
+$$\begin{aligned} g(\alpha, \lambda)&  = \frac{1}{2} \lVert w\rVert^{2} +C \sum^{n}_{i=1} \xi_{i} +\sum^{n}_{i=1} \alpha_{i}(1-y_{i}(w^{T}x_{i}+b)-\xi_{i})+ \sum^{n}_{i=1}\lambda_{i}(-\xi_{i})\\  &= \frac{1}{2}\sum^{m}_{i=1} \sum^{m}_{j=1} \alpha_{i} \alpha_{j} y_{i} y_{j} x_{i}^{T}x_{j} +C \sum^{m}_{i=1}\xi_{i} - \sum^{m}_{i=1} \sum^{m}_{j=1} \alpha_{i} \alpha_{j} y_{i} y_{j} x_{i}^{T}x_{j} \\& -  b  \underbrace{\sum^{m}_{i=1}\alpha_{i}y_{i}}_{0} + \sum^{m}_{i=1}\alpha_{i} - \sum^{m}_{i=1} \alpha_{i}\xi_{i} - \sum^{m}_{i=1}\underbrace{(C-\alpha_{i})\xi_{i}}_{\lambda_{i}} \\ &= \sum^{m}_{i=1} \alpha_{i} - \frac{1}{2} \sum^{m}_{i=1} \sum^{m}_{j=1} \alpha_{i} \alpha_{j} y_{i} y_{j} x_{i}^{T}x_{j} \end{aligned}$$ subject to the constraints:
+
+$$0 \le \alpha_{i} \le C, \sum^{n}_{i=1} y_{i}\alpha_{i}=0$$ 
 
 
 
