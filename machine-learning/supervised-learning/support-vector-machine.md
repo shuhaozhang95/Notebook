@@ -43,7 +43,21 @@ Ideally we would want an unconstrained problem, Hence, we have
 
 $$minimize \quad f_{0}(x) + \sum^{m}_{i=1} I\_(f_{i}(x)) +\sum^{p}_{i=1} I_{0}(h_{i}(x))$$ 
 
-where $$I\_(u) = $$ 
+where $$I\_(u) = \left\{ \begin{aligned} 0 & = u \le 0 \\ \infty & = u>0 \\  \end{aligned} \right.$$  and $$I_{0}(u)$$ is the indicator of 0. 
+
+然后我们引出拉格朗日
+
+The _**Lagrangian L**_: $$\mathcal{R}^{n} \times \mathcal{R}^{m} \times \mathcal{R}^{p} \to \mathcal{R}$$ is a lower bound on the original problem:
+
+$$L(x, \lambda, \nu): = f_{0}(x) +\sum^{m}_{i=1} \underbrace{\lambda_{i}f_{i}(x)}_{\le I\_({f_{i}(x)})} + \sum^{p}_{i=1} \underbrace{\nu_{i}h_{i}(x)}_{\le I_{0}(h_{i}(x))}$$ 
+
+and has domain $$domL:= \mathcal{D} \times \mathcal{R}^{m} \times \mathcal{R}^{p}.$$ The vectors $$\lambda$$ and $$\nu$$ are called _**lagrange multipliers**_ or _**dual variables**_. To ensure a lower bound, we require $$\lambda \succeq 0$$ .
+
+为了找到Lagrangian的解法，我们引出_**Largrange dual function**_
+
+The _**Lagrange dual function**_: minimize Lagrangian 
+
+when 
 
 ## Support vector classification
 
