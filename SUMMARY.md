@@ -26,8 +26,9 @@
   * [Expectation Maximisation](machine-learning/unsupervised-learning/expectation-maximisation.md)
   * [Dimension Reduction](machine-learning/unsupervised-learning/dimension-reduction/README.md)
     * [SVD](machine-learning/unsupervised-learning/dimension-reduction/svd.md)
-    * [t-SNE](machine-learning/unsupervised-learning/dimension-reduction/t-sne.md)
     * [Principal component analysis](machine-learning/unsupervised-learning/dimension-reduction/principal-component-analysis.md)
+    * [t-SNE](machine-learning/unsupervised-learning/dimension-reduction/t-sne.md)
+    * [NMF](machine-learning/unsupervised-learning/dimension-reduction/nmf.md)
 
 ## Deep Learning
 
@@ -37,6 +38,7 @@
   * [RNN/LSTM/GRU](deep-learning/classical-model/gru-lstm.md)
   * [GAN](deep-learning/classical-model/gan.md)
 * [Complex Model](deep-learning/complex-model/README.md)
+  * [Seq2Seq](deep-learning/complex-model/seq2seq.md)
   * [n-Gram](deep-learning/complex-model/n-gram.md)
   * [ResNet](deep-learning/complex-model/resnet.md)
   * [BERT](deep-learning/complex-model/bert.md)
