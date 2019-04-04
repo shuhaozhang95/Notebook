@@ -95,4 +95,5 @@
 
 * [Command](python/command.md)
 * [LaTeX](python/latex.md)
+* [Algorithm](python/algorithm.md)
 
