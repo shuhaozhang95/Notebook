@@ -18,7 +18,7 @@
         <p></p>
         <p></p>
         <p>
-          <img src="../../.gitbook/assets/image (42).png" alt/>
+          <img src="../../.gitbook/assets/image (44).png" alt/>
         </p>
       </td>
       <td style="text-align:left">

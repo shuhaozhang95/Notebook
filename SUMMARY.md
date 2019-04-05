@@ -94,6 +94,7 @@
 ## Develop
 
 * [Docker](develop/docker.md)
+* [Cloud services](develop/cloud-services.md)
 
 ## Python
 

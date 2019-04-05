@@ -32,7 +32,7 @@ _**RNN**_
 
 其中 ![\boldsymbol W\_{xh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bxh%7D) 和 ![\boldsymbol W\_{hh}](https://www.zhihu.com/equation?tex=%5Cboldsymbol+W_%7Bhh%7D) 是可学习的参数矩阵，激活函数tanh独立地应用到其输入的每个元素。
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 
 
