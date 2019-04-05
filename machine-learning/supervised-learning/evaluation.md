@@ -82,7 +82,7 @@ $$F1=\frac{2*precision*recall}{precision+recall}$$
 
 一般来说，如果ROC是光滑的，那么基本可以判断没有太大的overfitting（比如图中0.2到0.4可能就有问题，但是样本太少了），这个时候调模型可以只看AUC，面积越大一般认为模型越好。
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
 _**注意： AUC只是表示曲线下的面积 也有AUC of precision-Recall**_
 
@@ -90,7 +90,7 @@ _**注意： AUC只是表示曲线下的面积 也有AUC of precision-Recall**_
   
 
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 ROC和PR曲线可以用于衡量样本不平衡的情况。当Precision和recall的值差异很大时，你就不太能通过F1 Score来衡量了。
 
@@ -304,11 +304,11 @@ A/B测试中是用对照版本和试验版本两个样本的数据来对这两�
 
 T检验的计算公式，首先通过来公式计算出统计检验量Z值，公式中的相关组成因素就是：两个版本的各自均值、方差（标准差），以及样本的大小，从而推算出统计量的Z值是多少。
 
-![](../../.gitbook/assets/image%20%2848%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 
 然后通过t分布（大样本情况下近似正态分布）的公式计算得出和Z值对应的P值，阴影部分的面积就是P-value的值。
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2848%29.png)
 
 P值算出来之后，我们就可以根据P值按照前面介绍的假设检验决策规则来判断这两个样本均值的差异是否显著了。
 
