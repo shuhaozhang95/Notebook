@@ -10,18 +10,13 @@ Mesos：Mesos是一个通用资源管理平台，它所管理的核心目标对�
 
 ![](../.gitbook/assets/image%20%289%29.png)
 
+{% embed url="https://zhuanlan.zhihu.com/p/28368002" %}
 
 
-* Docker 主要针对 **Paas** 平台，是以**应用**为中心。
-* OpenStack 主要针对 **Iaas** 平台，以**资源**为中心，可以为上层的 PaaS 平台提供存储、网络、计算等资源。
 
-我们也看到，OpenStack 社区和 Docker 的结合越来越紧密。然而正如其他回答所示，OpenStack 主要还是用来管理 VM（虚拟机）。  
   
-另外两项技术，Kubernetes 是面向应用的 PaaS 层，Mesos 也偏向资源管理，但 Mesos 框架设计不错，基于它很容易构建 PaaS。
 
-OpenStack 很庞大，底层资源管理能力很强。
 
-Kubernetes 的强项在于容器编排，可以很好解决应用上云的问题。Kubernetes 可以运行在 OpenStack 上。  
   
 
 
