@@ -96,6 +96,7 @@
 * [Docker](develop/docker.md)
 * [Cloud services](develop/cloud-services.md)
 * [Kubernetes, mesos](develop/kubernetes-mesos.md)
+* [Git](develop/git.md)
 
 ## Python
 
