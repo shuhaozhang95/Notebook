@@ -12,6 +12,18 @@ Mesos：Mesos是一个通用资源管理平台，它所管理的核心目标对�
 
 {% embed url="https://zhuanlan.zhihu.com/p/28368002" %}
 
+至于要不要容器化，就要看对微服务、DevOps 的需求了。如何选择容器化技术栈，网易云架构师做了一个比较系统的梳理。
+
+* 千节点集群，少定制：使用开源 Kubernetes （细粒度设计，契合微服务思想）
+* 万节点集群，多定制：使用 Mesos + Marathon （双层调度好犀利）
+* 万节点集群，IT 能力强：深度定制 Kubernetes （如网易云）
+* 万节点集群，IT 能力强：深入掌握使用 DC/OS （DC/OS 在最基础的 Marathon 和 Mesos 之上添加了很多的组件）
+* 大数据集群：Spark on Mesos （建议只基于容器部署计算部分，数据部分另行部署）
+
+{% embed url="https://sq.163yun.com/blog/article/155843560335699968" %}
+
+{% embed url="https://sq.163yun.com/blog/article/155844837358661632" %}
+
 
 
   
