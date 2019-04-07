@@ -97,6 +97,8 @@
 * [Cloud services](develop/cloud-services.md)
 * [Kubernetes, mesos](develop/kubernetes-mesos.md)
 * [Git](develop/git.md)
+* [Linux/Unix](develop/linux-unix.md)
+* [Jump Server](develop/jump-server.md)
 
 ## Python
 
