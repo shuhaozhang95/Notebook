@@ -237,7 +237,13 @@ less filename
         &#x4F60;&#x5FC5;&#x987B;&#x662F;&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x624D;&#x80FD;&#x67E5;&#x770B;&#x8FD9;&#x4E9B;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3002;</td>
     </tr>
   </tbody>
-</table>
+</table>#### 硬链接/软链接\(符号链接\)
+
+{% embed url="https://blog.csdn.net/geerniya/article/details/79093301" %}
+
+{% embed url="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" %}
+
+
 
 
 
