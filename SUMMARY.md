@@ -99,6 +99,7 @@
 * [Git](develop/git.md)
 * [Linux/Unix](develop/linux-unix.md)
 * [Jump Server](develop/jump-server.md)
+* [MySQL](develop/mysql.md)
 
 ## Python
 
