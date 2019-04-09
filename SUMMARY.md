@@ -103,7 +103,7 @@
 * [Database](develop/database/README.md)
   * [MySQL](develop/database/mysql.md)
   * [NoSQL](develop/database/nosql.md)
-* [Big Data](develop/big-data/README.md)
+* [Distributed Computing](develop/big-data/README.md)
   * [Hadoop](develop/big-data/hadoop.md)
   * [Spark](develop/big-data/spark.md)
 * [Git](develop/git.md)
