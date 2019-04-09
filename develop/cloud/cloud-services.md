@@ -2,7 +2,7 @@
 
 云服务只是一个统称，可以分成三大类。
 
-![](../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2841%29.png)
 
 * **IaaS**：基础设施服务，Infrastructure-as-a-service
 * **PaaS**：平台服务，Platform-as-a-service
@@ -12,7 +12,7 @@
 
 对应软件开发，则是下面这张图。
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2844%29.png)
 
 
 

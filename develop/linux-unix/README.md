@@ -259,7 +259,7 @@ less filename
 
 {% embed url="https://i.linuxtoy.org/files/pdf/fwunixref.pdf" %}
 
-{% file src="../.gitbook/assets/unix-comment-cheat-sheet.pdf" caption="Unix/Linux comment cheat sheet" %}
+{% file src="../../.gitbook/assets/unix-comment-cheat-sheet.pdf" caption="Unix/Linux comment cheat sheet" %}
 
 {% embed url="http://billie66.github.io/TLCL/book/chap01.html" %}
 
