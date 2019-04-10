@@ -243,9 +243,26 @@ less filename
 
 {% embed url="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" %}
 
+#### 使用命令
 
+* type – 说明怎样解释一个命令名
+* which – 显示会执行哪个可执行程序
+* man – 显示命令手册页
+* apropos – 显示一系列适合的命令
+* info – 显示命令 info
+* whatis – 显示一个命令的简洁描述
+* alias – 创建命令别名
 
+#### 重定向
 
+* cat － 连接文件
+* sort － 排序文本行
+* uniq － 报道或省略重复行
+* grep － 打印匹配行
+* wc － 打印文件中换行符，字，和字节个数
+* head － 输出文件第一部分
+* tail - 输出文件最后一部分
+* tee - 从标准输入读取数据，并同时写到标准输出和文件
 
 
 
