@@ -124,7 +124,7 @@ Word2Vec的作者在他们第二篇[paper](http://arxiv.org/pdf/1310.4546.pdf)�
 
 在part1中，我展示了如何从句子中产生训练样本，这里我再重复一下。例子为“The quick brown fox jumps over the lazy dog.“
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![](../../../.gitbook/assets/image%20%2836%29.png)
 
 比如像“the“这种常见的词，我们会遇到两个问题：   
 1. 比如（fox，the）其实没有传递我们关于 fox的信息。‘the‘出现得太多了。   

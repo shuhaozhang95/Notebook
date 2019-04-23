@@ -90,6 +90,8 @@
 
 * [Scored Card Model](risk-control/scored-card-model.md)
 * [Graph Neural Network](risk-control/graph-neural-network.md)
+* [Model Evaluation](risk-control/model-evaluation/README.md)
+  * [PSI, IV, WOE](risk-control/model-evaluation/psi-iv-woe.md)
 
 ## Develop
 
