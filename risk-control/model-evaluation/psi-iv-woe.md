@@ -131,7 +131,25 @@ KS的计算方法与ROC相似。
 
 **累计提升曲线LIFT**
 
+LIFT曲线衡量的是，与不利模型相比，模型的预测能力“变好”了多少，LIFT（提升指数）越大，模型的运行效果越好。实际上它强调的是投入与产出比。
+$$
+LIFT = \frac{\frac{TP}{TP+FP}}{\frac{TP+FN}{TP+FP+TN+FN}} = \frac{PRE}{正例占比}
+$$
+PRE为正确率。
+$$
+PRE =\frac{TP}{TP+FP}
+$$
+**Lift指标可以这样理解：**在不使用模型的情况下，我们用先验概率估计正例的比例，即上式子分母部分，以此作为正例的命中率；利用模型后，我们不需要从整个样本中来挑选正例，只需要从我们预测为正例的那个样本的子集 ![TP+FP](https://www.zhihu.com/equation?tex=TP%2BFP) 中挑选正例，这时正例的命中率为 ![PRE](https://www.zhihu.com/equation?tex=PRE) ，后者除以前者即可得提升值**Lift。**
 
 
 
+LIFT曲线
+
+先引入depth的概念。
+$$
+depth = \frac{TP+FP}{TP+FP+TN+FN}
+$$
+所以depth代表的是预测为正例的样本占整个样本的比例
+
+一般要求，在尽量大的 ![depth](https://www.zhihu.com/equation?tex=depth) 下得到尽量大的 ![Lift](https://www.zhihu.com/equation?tex=Lift)，所以 ![Lift](https://www.zhihu.com/equation?tex=Lift) 曲线的右半部分应该尽量陡峭。
 
