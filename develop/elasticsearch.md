@@ -14,6 +14,8 @@ Elasticsearch使用JavaScript Object Notation或者JSON作为文档的序列化�
 
 
 
+##### 基本操作
+
 *索引*
 
 ```js
@@ -80,13 +82,60 @@ GET /megacorp/employee/_search
 }
 ```
 
+*全文搜索*（使用about）
 
+```js
+GET /megacorp/employee/_search
+{
+    "query" : {
+        "match" : {
+            "about" : "rock climbing"
+        }
+    }
+}
+```
 
+短语搜索（用match_phrase）
 
+```js
+GET /megacorp/employee/_search
+{
+    "query" : {
+        "match_phrase" : {
+            "about" : "rock climbing"
+        }
+    }
+}
+```
 
+高亮搜索（使用highlight使得搜索内容中高亮显示被选中的原因）
 
+```js
+GET /megacorp/employee/_search
+{
+    "query" : {
+        "match_phrase" : {
+            "about" : "rock climbing"
+        }
+    },
+    "highlight": {
+        "fields" : {
+            "about" : {}
+        }
+    }
+}
+```
 
+分析（groupby的功能）
 
-
-
+```js
+GET /megacorp/employee/_search
+{
+  "aggs": {
+    "all_interests": {
+      "terms": { "field": "interests" }
+    }
+  }
+}
+```
 
