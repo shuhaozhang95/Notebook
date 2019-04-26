@@ -92,6 +92,7 @@
 * [Graph Neural Network](risk-control/graph-neural-network.md)
 * [Model Evaluation](risk-control/model-evaluation/README.md)
   * [PSI, IV, WOE, KS, GINI, LIFT](risk-control/model-evaluation/psi-iv-woe.md)
+* [User profile](risk-control/user-profile.md)
 
 ## Develop
 

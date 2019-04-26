@@ -19,7 +19,7 @@
 
 变量分箱的方法：
 
-![i](https://www.zhihu.com/equation?tex=i)![i](https://www.zhihu.com/equation?tex=i)![j](https://www.zhihu.com/equation?tex=j)![Score= A-B\{\theta\_0 + \theta\_1x\_1+\cdots+\theta\_nx\_n \} \\](https://www.zhihu.com/equation?tex=Score%3D+A-B\{\theta_0+%2B+\theta_1x_1%2B\cdots%2B\theta_nx_n+\}+\\)![&#x3B4;\_{ij} = 0](https://www.zhihu.com/equation?tex=δ_{ij}+%3D+0)![i](https://www.zhihu.com/equation?tex=i)![i](https://www.zhihu.com/equation?tex=i)![img](https://pic4.zhimg.com/80/v2-31cba8dc3a08bf93a79f0c1c24291c37_hd.jpg)![X\_1, X\_2, \cdots , X\_n](https://www.zhihu.com/equation?tex=X_1%2C+X_2%2C+\cdots+%2C+X_n)![\[-1.0,1.0\]](https://www.zhihu.com/equation?tex=[-1.0%2C1.0])![c\_0,c\_1,c\_2, \cdots, c\_n](https://www.zhihu.com/equation?tex=c_0%2Cc_1%2Cc_2%2C+\cdots%2C+c_n)
+![img](https://pic4.zhimg.com/80/v2-31cba8dc3a08bf93a79f0c1c24291c37_hd.jpg)
 
 **1. 无监督分箱**
 
@@ -43,7 +43,7 @@
 
 Chimerge的具体算法如下：
 
-1. 输入：分箱的最大区间数 ![P\_0](https://www.zhihu.com/equation?tex=P_0)
+1. 输入：分箱的最大区间数 ![n](https://www.zhihu.com/equation?tex=n)
 2. 初始化
 3. 连续值按升序排列，离散值先转化为坏客户的比率，然后再按升序排列；
 4. 为了减少计算量，对于状态数大于某一阈值 \(建议为100\) 的变量，利用等频分箱进行粗分箱。
@@ -52,9 +52,9 @@ Chimerge的具体算法如下：
 7. 计算每一对相邻区间的卡方值；
 8. 将卡方值最小的一对区间合并
 
-![-B\(\theta\_i w\_{ij} \) ](https://www.zhihu.com/equation?tex=-B%28\theta_i+w_{ij}+%29+) ![c\_1X\_1 + c\_2X\_2 + \cdots + c\_nX\_n \approx c\_0 \\](https://www.zhihu.com/equation?tex=c_1X_1+%2B+c_2X_2+%2B+\cdots+%2B+c_nX_n+\approx+c_0+\\)：第 i 区间第 j 类的实例数量 ![X\_i](https://www.zhihu.com/equation?tex=X_i) ： ![\hat X\_i](https://www.zhihu.com/equation?tex=\hat+X_i) ， ![p= \frac{1}{1 + e^{-\theta^Tx}} \\](https://www.zhihu.com/equation?tex=p%3D+\frac{1}{1+%2B+e^{-\theta^Tx}}+\\) 是合并区间的样本数， ![\text{odds}](https://www.zhihu.com/equation?tex=\text{odds}) 是第 ![2&#x3B8;\_0](https://www.zhihu.com/equation?tex=2θ_0) 组的样本数， ![P\_0 = A-B\times \text{log}\(\theta\_0\) \ P\_0 - PDO = A-B\times \text{log}\(2\theta\_0\) \\](https://www.zhihu.com/equation?tex=P_0+%3D+A-B\times+\text{log}%28\theta_0%29+\+P_0+-+PDO+%3D+A-B\times+\text{log}%282\theta_0%29+\\) 是第 ![\(\theta\_i w\_{ij} \) \delta\_{ij}](https://www.zhihu.com/equation?tex=%28\theta_i+w_{ij}+%29+\delta_{ij}) 类样本在合并区间的样本数。
+![X^2 = \sum\_{i=1}^2 \sum\_{j=1}^2\frac{\(A\_{ij} - E\_{ij}\)^2}{E\_{ij}} \\](https://www.zhihu.com/equation?tex=X^2+%3D+\sum_{i%3D1}^2+\sum_{j%3D1}^2\frac{%28A_{ij}+-+E_{ij}%29^2}{E_{ij}}+\\) ![A\_{ij}](https://www.zhihu.com/equation?tex=A_{ij})：第 i 区间第 j 类的实例数量 ![E\_{ij}](https://www.zhihu.com/equation?tex=E_{ij}) ： ![E\_{ij} = \frac{N\_i }{N}\times C\_j](https://www.zhihu.com/equation?tex=E_{ij}+%3D+\frac{N_i+}{N}\times+C_j) ， ![N](https://www.zhihu.com/equation?tex=N) 是合并区间的样本数， ![N\_i](https://www.zhihu.com/equation?tex=N_i) 是第 ![i](https://www.zhihu.com/equation?tex=i) 组的样本数， ![C\_j](https://www.zhihu.com/equation?tex=C_j) 是第 ![j](https://www.zhihu.com/equation?tex=j) 类样本在合并区间的样本数。
 
-* 重复以上两个步骤，直到分箱数量不大于 ![A-B&#x3B8;\_0](https://www.zhihu.com/equation?tex=A-Bθ_0)
+* 重复以上两个步骤，直到分箱数量不大于 ![n](https://www.zhihu.com/equation?tex=n)
 
 单变量的筛选基于变量预测能力，常用方法：
 
@@ -67,7 +67,7 @@ Chimerge的具体算法如下：
 
 **1 变量两两相关性分析**
 
-对于自变量 ![&#x3B4;\_{ij}](https://www.zhihu.com/equation?tex=δ_{ij})，如果存在常数 ![j](https://www.zhihu.com/equation?tex=j) 使得以下线性等式近似成立: ![\theta\_i](https://www.zhihu.com/equation?tex=\theta_i) 称自变量 ![X\_1, X\_2](https://www.zhihu.com/equation?tex=X_1%2C+X_2) 具有较强的线性相关性。
+对于自变量 ![X\_1, X\_2](https://www.zhihu.com/equation?tex=X_1%2C+X_2)，如果存在常数 ![c\_0,c\_1,c\_2](https://www.zhihu.com/equation?tex=c_0%2Cc_1%2Cc_2) 使得以下线性等式近似成立: ![c\_1X\_1 + c\_2X\_2 \approx c\_0 \\](https://www.zhihu.com/equation?tex=c_1X_1+%2B+c_2X_2+\approx+c_0+\\) 称自变量 ![X\_1, X\_2](https://www.zhihu.com/equation?tex=X_1%2C+X_2) 具有较强的线性相关性。
 
 两变量间的线性相关性可以利用皮尔森相关系数来衡量。系数的取值为 ![\[-1.0,1.0\]](https://www.zhihu.com/equation?tex=[-1.0%2C1.0]) ，相关系数越接近0的说明两变量线性相关性越弱，越接近1或-1两变量线性相关性越强。 ![r\_{X,Y}=\frac{cov\(X,Y\)}{\sigma\_X\sigma\_Y}=\frac{E\(\(X-\bar X\)\(Y-\bar Y\)\)}{\sqrt{\sum\limits\_{i=1}^n\(X\_i-\bar X\)^2} \sqrt{ \sum\limits\_{i=1}^n\(Y\_i-\bar Y\)^2}} = \frac{E\(XY\)-E\(X\)\(Y\)}{\sqrt{E\(X^2\)-E^2\(X\)}\sqrt{E\(Y^2\)-E^2\(Y\)}} \\](https://www.zhihu.com/equation?tex=r_{X%2CY}%3D\frac{cov%28X%2CY%29}{\sigma_X\sigma_Y}%3D\frac{E%28%28X-\bar+X%29%28Y-\bar+Y%29%29}{\sqrt{\sum\limits_{i%3D1}^n%28X_i-\bar+X%29^2}+\sqrt{+\sum\limits_{i%3D1}^n%28Y_i-\bar+Y%29^2}}+%3D+\frac{E%28XY%29-E%28X%29%28Y%29}{\sqrt{E%28X^2%29-E^2%28X%29}\sqrt{E%28Y^2%29-E^2%28Y%29}}+\\) 当两变量间的相关系数大于阈值时（一般阈值设为 0.7 或 0.4），剔除IV值较低的变量，或分箱严重不均衡的变量。
 
