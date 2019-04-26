@@ -111,6 +111,7 @@
   * [Spark](develop/big-data/spark.md)
 * [Git](develop/git.md)
 * [Elasticsearch](develop/elasticsearch.md)
+* [RESTful API](develop/restful-api.md)
 
 ## Python
 
