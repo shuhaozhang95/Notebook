@@ -1,4 +1,8 @@
-### Elastic Search
+# Elasticsearch
+
+
+
+#### Elastic Search
 
 Elasticsearch是一个全文搜索引擎，用 JAVA编写的，内部使用Lucene做索引与搜索，并且提供一套简单一直的RESTful API。
 
@@ -8,17 +12,13 @@ Elasticsearch是一个全文搜索引擎，用 JAVA编写的，内部使用Lucen
 
 能够胜任上百个服务节点的扩展，并支持PB级别的结构化或者非结构化数据。
 
-
-
 Elasticsearch使用JavaScript Object Notation或者JSON作为文档的序列化格式。JSON序列化被大多数编程语言所支持，并且已经成为NoSQL领域的标准格式。
 
+**基本操作**
 
+_索引_
 
-##### 基本操作
-
-*索引*
-
-```js
+```text
 PUT /megacorp（索引名称）/employee（类型名称）/1（ID）
 {
     "first_name" : "John",
@@ -29,25 +29,25 @@ PUT /megacorp（索引名称）/employee（类型名称）/1（ID）
 }
 ```
 
-*检索*
+_检索_
 
-```js
+```text
 GET /megacorp（索引库）/employee（类型）/1（ID）
 ```
 
-*轻量搜索*
+_轻量搜索_
 
 涉及到查询字符串（_query-string_）搜索，我们通过一个URL参数来传递查询信息给搜索接口
 
-```jsx
+```text
 GET /megacorp/employee/_search?q=last_name:Smith
 ```
 
-*查询表达式搜索*
+_查询表达式搜索_
 
 支持更加复杂的查询。领域特定语言（DSL），指定了使用以一个JSON请求。请求体由JSON构造，并使用了一个match查询。
 
-```js
+```text
 GET /megacorp/employee/_search
 {
     "query" : {
@@ -58,11 +58,11 @@ GET /megacorp/employee/_search
 }
 ```
 
-*更复杂搜索*
+_更复杂搜索_
 
 可以在表达式搜索的基础上 增加filter过滤器
 
-```js
+```text
 GET /megacorp/employee/_search
 {
     "query" : {
@@ -82,9 +82,9 @@ GET /megacorp/employee/_search
 }
 ```
 
-*全文搜索*（使用about）
+_全文搜索_（使用about）
 
-```js
+```text
 GET /megacorp/employee/_search
 {
     "query" : {
@@ -95,9 +95,9 @@ GET /megacorp/employee/_search
 }
 ```
 
-短语搜索（用match_phrase）
+短语搜索（用match\_phrase）
 
-```js
+```text
 GET /megacorp/employee/_search
 {
     "query" : {
@@ -110,7 +110,7 @@ GET /megacorp/employee/_search
 
 高亮搜索（使用highlight使得搜索内容中高亮显示被选中的原因）
 
-```js
+```text
 GET /megacorp/employee/_search
 {
     "query" : {
@@ -128,7 +128,7 @@ GET /megacorp/employee/_search
 
 分析（groupby的功能）
 
-```js
+```text
 GET /megacorp/employee/_search
 {
   "aggs": {
