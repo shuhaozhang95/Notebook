@@ -46,7 +46,7 @@ $$J = \sum_{i,j=1}^{V} f(X_{ij})(w_{i}^{T}\tilde{w_{j}} + b_i + \tilde{b_j} – 
 
 $$f(x)=\begin{equation}  \begin{cases}  (x/x_{max})^{\alpha}  & \text{if} \ x < x_{max} \\  1 & \text{otherwise}  \end{cases}  \end{equation} \tag{3}$$ 
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 这篇论文中的所有实验， α 的取值都是0.75，而 x m a x 取值都是100。以上就是GloVe的实现细节，那么GloVe是如何训练的呢？
 
@@ -56,7 +56,7 @@ $$f(x)=\begin{equation}  \begin{cases}  (x/x_{max})^{\alpha}  & \text{if} \ x < 
 
  虽然很多人声称GloVe是一种无监督（unsupervised learing）的学习方式（因为它确实不需要人工标注label），但其实它还是有label的，这个label就是公式2中的 __$$\log(X_{i,j})$$ ，而公式2中的向量 $$w$$ 和 $$\tilde{w}$$ 就是要不断更新/学习的参数，所以本质上它的训练方式跟监督学习的训练方法没什么不一样，都是基于梯度下降的。具体地，这篇论文里的实验是这么做的：**采用了AdaGrad的梯度下降算法，对矩阵X中的所有非零元素进行随机采样，学习曲率（learning rate）设为0.05，在vector size小于300的情况下迭代了50次，其他大小的vectors上迭代了100次，直至收敛。**最终学习得到的是两个vector是 $$w$$ 和 $$\tilde{w}$$ ，因为X是对称的（symmetric），所以从原理上讲 $$w$$ 和 $$\tilde{w}$$ 是也是对称的，他们唯一的区别是初始化的值不一样，而导致最终的值不一样。所以这两者其实是等价的，都可以当成最终的结果来使用。**但是为了提高鲁棒性，我们最终会选择两者之和** $$w + \tilde{w}$$ **作为最终的vector（两者的初始化不同相当于加了不同的随机噪声，所以能提高鲁棒性）。**在训练了400亿个token组成的语料后，得到的实验结果如下图所示：
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2841%29.png)
 
 这个图一共采用了三个指标：语义准确度，语法准确度以及总体准确度。那么我们不难发现Vector Dimension在300时能达到最佳，而context Windows size大致在6到10之间。
 
@@ -78,7 +78,7 @@ LSA（Latent Semantic Analysis）是一种比较早的count-based的词向量表
 
 有了这些定义之后，我们来看一个表格：
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
  理解这个表格的重点在最后一行，它表示的是两个概率的比值（ratio），**我们可以使用它观察出两个单词** $$i$$ **和** $$j$$ **相对于单词** $$k$$ **哪个更相关（relevant）。**比如，ice和solid更相关，而stream和solid明显不相关，于是我们会发现 $$P(solid|ice)/P(solid|steam)$$ 比1大更多。同样的gas和steam更相关，而和ice不相关，那么 $$P(gas|ice)/P(gas|steam)$$ 就远小于1；当都有关（比如water）或者都没有关\(fashion\)的时候，两者的比例接近于1；这个是很直观的。因此，**以上推断可以说明通过概率的比例而不是概率本身去学习词向量可能是一个更恰当的方法**，因此下文所有内容都围绕这一点展开。  
 于是为了捕捉上面提到的概率比例，我们可以构造如下函数：

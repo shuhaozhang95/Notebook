@@ -26,7 +26,7 @@ skipgram model 常常让人惊讶于它的简单结构。我认为基本没啥�
 
 我们通过给网络 输入我们在训练文本中 找到的词对，来训练网络。下面这个例子展示了从“The quick brown fox jumps over the lazy dog.“ 中找到的一些词对. 我使用了window size=2，而蓝色标出的词为输入词。 
 
-![](../../../.gitbook/assets/image%20%2819%29.png)
+![](../../../.gitbook/assets/image%20%2820%29.png)
 
 网络将会去学这些pair出现的统计概率。举个例子来说，网络会得到很多 （苏联，联合）的概率多过（苏联，[大脚怪](https://www.baidu.com/s?wd=%E5%A4%A7%E8%84%9A%E6%80%AA&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)）。所以当训练完成的时候，当你输入了苏联这个词，联合会得到比大脚怪更高的预测概率。
 
@@ -71,7 +71,7 @@ skipgram model 常常让人惊讶于它的简单结构。我认为基本没啥�
 
 更具体的来说，每个word vector（1×3001×300）将会乘一个W\(300×10,000\)再次映射到 10,000维，每一维代表临近词的概率。而这些概率做一个softmax的normal（就是图中的exp 的函数，来归一化）。 下面是一张说明图。 
 
-![](../../../.gitbook/assets/image%20%2815%29.png)
+![](../../../.gitbook/assets/image%20%2816%29.png)
 
 > 需要注意的是，神经网络彬不知道输出词对于输入词的位置。输出词常常在输入词的前面还是后面。举个例子来说，虽然York 100%是跟在 New的后面，但是训练出来的网络 用York 作为输入，New 并不是100%的，还可能是其词。
 
@@ -124,7 +124,7 @@ Word2Vec的作者在他们第二篇[paper](http://arxiv.org/pdf/1310.4546.pdf)�
 
 在part1中，我展示了如何从句子中产生训练样本，这里我再重复一下。例子为“The quick brown fox jumps over the lazy dog.“
 
-![](../../../.gitbook/assets/image%20%2836%29.png)
+![](../../../.gitbook/assets/image%20%2837%29.png)
 
 比如像“the“这种常见的词，我们会遇到两个问题：   
 1. 比如（fox，the）其实没有传递我们关于 fox的信息。‘the‘出现得太多了。   

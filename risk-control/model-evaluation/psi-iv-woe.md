@@ -6,7 +6,7 @@
 
 稳定度指标\(population stability index ,PSI\)可衡量测试样本及模型开发样本评分的的分布差异，为最常见的模型稳定度评估指针。其实PSI表示的就是按分数分档后，针对不同样本，或者不同时间的样本，population分布是否有变化，就是看各个分数区间内人数占总人数的占比是否有显著变化。
 
-![](../../.gitbook/assets/image%20%2853%29.png)
+![](../../.gitbook/assets/image%20%2854%29.png)
 
 **PSI实际应用范例：**
 
